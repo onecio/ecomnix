@@ -45,12 +45,11 @@
             z-index: -1;
         }
 
-        /* --- AJUSTE DE CONTAINER 1: Margens laterais e verticais --- */
         .container {
-            width: 90%; /* Reduzido de 96% para AUMENTAR as margens laterais */
-            max-width: 1700px; /* Reduzido de 1800px para complementar */
+            width: 96%;
+            max-width: 1800px;
             margin: 0 auto;
-            padding: 90px 0; /* Reduzido de 140px para DIMINUIR os espaços verticais */
+            padding: 140px 0;
             position: relative;
             z-index: 2;
         }
@@ -60,7 +59,7 @@
             width: 100%;
             top: 0;
             left: 0;
-            padding: 25px 5%; /* Ajustado para alinhar com o novo container */
+            padding: 25px 2%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -87,6 +86,7 @@
             text-shadow: 0 0 15px var(--glow-cyan);
         }
 
+        /* --- AJUSTE NO HEADER PARA O BOTÃO DO WHITE PAPER --- */
         .header-nav {
             display: flex;
             align-items: center;
@@ -126,7 +126,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 5%;
+            padding: 0 2%;
         }
 
         .hero h1 {
@@ -181,7 +181,7 @@
         h2 {
             font-size: 3.5rem;
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 80px;
             color: var(--text-white);
             font-weight: 700;
         }
@@ -223,7 +223,8 @@
             font-size: 1.2rem;
         }
         
-        .timeline { position: relative; max-width: 1700px; margin: 0 auto; }
+        /* Estilos demais permanecem os mesmos... */
+        .timeline { position: relative; max-width: 1800px; margin: 0 auto; }
         .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--glow-cyan); top: 0; bottom: 0; left: 50%; margin-left: -3px; box-shadow: 0 0 15px var(--glow-cyan); opacity: 0.3; }
         .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
         .timeline-container.left { left: 0; }
@@ -251,6 +252,7 @@
         .whitepaper-section ul { list-style: none; padding-left: 30px; }
         .whitepaper-section li::before { content: '■'; position: absolute; left: -30px; color: var(--glow-cyan); font-size: 1em; top: 10px; }
         
+        /* --- ESTILO PARA O NOVO BOTÃO DO PDF --- */
         .pdf-button-wrapper {
             text-align: center;
             margin-top: 40px;
@@ -267,16 +269,24 @@
         .footer-links a { margin: 0 20px; text-decoration: none; color: var(--text-light); }
         .footer-contact { line-height: 1.8; }
 
-        /* --- AJUSTE DE RESPONSIVIDADE 2: Otimizações para mobile --- */
-        @media (max-width: 768px) {
-            body { font-size: 17px; /* Base confortável para mobile */ }
-            
-            .container { padding: 60px 0; /* Espaçamento vertical menor em mobile */ }
+        @media (max-width: 1200px) {
+            .hero h1 { font-size: 5rem; }
+            h2 { font-size: 2.8rem; }
+            .header-nav a:not(.cta-button-header) { display: none; }
+        }
 
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 4rem; }
+            .hero p { font-size: 1.3rem; }
+            h2 { font-size: 2.5rem; }
+            .whitepaper-section { padding: 40px; }
+        }
+        
+        @media (max-width: 768px) {
+            body { font-size: 18px; }
             .hero h1 { font-size: 3rem; letter-spacing: -1px; }
             .hero p { font-size: 1.1rem; }
-            h2 { font-size: 2.2rem; margin-bottom: 50px; }
-            .header-nav { gap: 15px; }
+            h2 { font-size: 2.2rem; }
             .cta-button-header { font-size: 0.9rem; padding: 10px 20px; }
             
             .timeline::after { left: 31px; }
@@ -417,6 +427,7 @@
                     Acessar o White Paper Completo (PDF)
                 </a>
             </div>
+
 
             <h3>Capítulo 1: O Imperativo da Ação Climática e a Insuficiência dos Modelos Atuais</h3>
             <h4>1.1 A Realidade dos Extremos Climáticos</h4>
