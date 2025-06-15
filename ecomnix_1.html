@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECOMNIX | Arquitetando a Próxima Geração de Mercados de Carbono</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
 
         :root {
             --dark-indigo: #0D1B2A;
             --dark-green: #0C221A;
             --glow-cyan: #00FFFF;
-            --text-light: #F0F2F5; /* Levemente mais claro */
+            --text-light: #E0E1DD;
             --text-white: #FFFFFF;
-            --glass-bg: rgba(255, 255, 255, 0.07); /* Efeito de vidro mais pronunciado */
+            --glass-bg: rgba(255, 255, 255, 0.05);
         }
 
         * {
@@ -28,13 +28,12 @@
 
         body {
             font-family: 'Sora', sans-serif;
+            font-size: 1.05rem; /* Base font size increased */
             background-color: var(--dark-indigo);
             color: var(--text-light);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            /* --- AJUSTE DE FONTE 1: Aumento significativo da Fonte Base --- */
-            font-size: 22px; /* Aumentado de 20px para 22px */
         }
         
         #hero-canvas {
@@ -46,12 +45,11 @@
             z-index: -1;
         }
 
-        /* --- AJUSTE DE CONTAINER 1: Aumento máximo da Largura --- */
         .container {
-            width: 96%; /* Aumentado de 95% para ocupar mais espaço */
-            max-width: 1800px; /* Aumentado de 1600px para 1800px */
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 140px 0; /* Mais espaçamento vertical */
+            padding: 120px 0;
             position: relative;
             z-index: 2;
         }
@@ -61,7 +59,7 @@
             width: 100%;
             top: 0;
             left: 0;
-            padding: 25px 2%; /* Ajustado para alinhar com o novo container */
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -71,13 +69,13 @@
         }
         
         header.scrolled {
-            background-color: rgba(13, 27, 42, 0.95);
-            backdrop-filter: blur(12px);
+            background-color: rgba(13, 27, 42, 0.9);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
-            font-size: 2.2rem; 
-            font-weight: 800; /* Mais peso */
+            font-size: 2.0rem; /* Increased */
+            font-weight: 700;
             color: var(--text-white);
             text-decoration: none;
             letter-spacing: 1px;
@@ -85,28 +83,40 @@
         
         .logo span {
             color: var(--glow-cyan);
-            text-shadow: 0 0 15px var(--glow-cyan); /* Destaque maior */
+            text-shadow: 0 0 10px var(--glow-cyan);
         }
 
-        /* Removendo o menu de navegação para um foco total no topo, como é comum em landing pages de alto impacto */
-        nav { display: none; }
-        
-        .cta-button-header {
-             background: var(--glow-cyan);
-            color: var(--dark-indigo);
-            padding: 14px 28px;
-            border-radius: 50px;
+        nav a {
+            color: var(--text-light);
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-        }
-        .cta-button-header:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.9);
+            margin-left: 30px;
+            font-size: 1.1rem; /* Increased */
+            font-weight: 400;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
 
+        nav a:hover {
+            color: var(--glow-cyan);
+            text-shadow: 0 0 5px var(--glow-cyan);
+        }
+        
+        .cta-button-nav {
+            background: transparent;
+            border: 1px solid var(--glow-cyan);
+            color: var(--glow-cyan);
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            margin-left: 30px;
+        }
+        
+        .cta-button-nav:hover {
+            background-color: var(--glow-cyan);
+            color: var(--dark-indigo);
+            box-shadow: 0 0 15px var(--glow-cyan);
+        }
 
         .hero {
             height: 100vh;
@@ -115,52 +125,47 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 2%;
+            padding: 0 5%;
         }
 
-        /* --- AJUSTE DE DESTAQUE TOPO 2: Título principal maior e mais pesado --- */
         .hero h1 {
-            font-size: 6rem; /* Aumento significativo */
-            font-weight: 800; /* Extra Bold */
+            font-size: 4.4rem; /* Increased */
+            font-weight: 700;
             color: var(--text-white);
-            line-height: 1.05;
-            margin-bottom: 30px;
-            text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
-            max-width: 1200px;
-            letter-spacing: -2px; /* Letras mais juntas para impacto */
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            max-width: 900px;
         }
 
         .hero p {
-            font-size: 1.6rem; /* Aumentado */
-            max-width: 950px; 
-            margin-bottom: 50px;
-            line-height: 1.7;
-            font-weight: 400;
+            font-size: 1.4rem; /* Increased */
+            max-width: 700px;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
 
-        /* --- AJUSTE DE DESTAQUE TOPO 3: Botão de ação maior --- */
         .cta-button {
             background: var(--glow-cyan);
             color: var(--dark-indigo);
-            padding: 22px 55px; /* Muito maior */
+            padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.4rem; /* Maior */
+            font-size: 1.2rem; /* Increased */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
-            border: 2px solid transparent;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
         
         .cta-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 255, 255, 1);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
         }
         
         .section {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         .section.visible {
@@ -169,53 +174,50 @@
         }
 
         h2 {
-            font-size: 3.5rem; /* Aumentado */
+            font-size: 3.0rem; /* Increased */
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             color: var(--text-white);
-            font-weight: 700;
         }
         
         h2 span {
             color: var(--glow-cyan);
-            text-shadow: 0 0 15px var(--glow-cyan);
+            text-shadow: 0 0 10px var(--glow-cyan);
         }
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
         
         .card {
             background: var(--glass-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px; /* Mais arredondado */
-            padding: 45px;
-            backdrop-filter: blur(12px);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(0, 255, 255, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .card h3 {
-            font-size: 2rem; /* Aumentado */
+            font-size: 1.7rem; /* Increased */
             color: var(--glow-cyan);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .card p, .card li {
-            line-height: 1.8;
-            font-size: 1.2rem; /* Aumentado */
+            line-height: 1.7;
         }
-        
+
         .timeline {
             position: relative;
-            max-width: 1800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -259,7 +261,7 @@
         .right::after { left: -16px; }
 
         .timeline-content {
-            padding: 30px 40px;
+            padding: 20px 30px;
             background: var(--glass-bg);
             position: relative;
             border-radius: 15px;
@@ -268,108 +270,103 @@
         
         .timeline-content h3 {
             color: var(--text-white);
-            margin-bottom: 15px;
-            font-size: 1.6rem; /* Aumentado */
+            margin-bottom: 10px;
         }
         
         .cta-section {
             text-align: center;
             background: linear-gradient(180deg, var(--dark-indigo) 0%, var(--dark-green) 100%);
             border-radius: 20px;
-            padding: 90px 40px;
+            padding: 80px 40px;
         }
         
-        .cta-section h2 { margin-bottom: 25px; }
-        .cta-section p { margin-bottom: 50px; font-size: 1.6rem; /* Aumentado */ }
+        .cta-section h2 { margin-bottom: 20px; }
+        .cta-section p { margin-bottom: 40px; font-size: 1.1rem; }
+        .cta-section p { margin-bottom: 40px; font-size: 1.25rem; } /* Increased */
 
         .whitepaper-section {
             background: var(--glass-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 70px;
-            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 50px 20px; /* Adjusted padding for more lateral space */
+            backdrop-filter: blur(10px);
         }
 
         .whitepaper-section h2 {
-            font-size: 3rem; 
+            font-size: 2.4rem; /* Increased */
             text-align: left;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
         }
 
         .whitepaper-section h3 {
-            font-size: 2.4rem; 
+            font-size: 2.0rem; /* Increased */
             color: var(--glow-cyan);
-            margin-top: 55px;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--glow-cyan);
-            padding-left: 25px;
-        }
-        
-        .whitepaper-section h4 {
-            font-size: 1.9rem;
-            color: var(--text-white);
-            margin-top: 45px;
-            margin-bottom: 25px;
-        }
-        
-        .whitepaper-section p, .whitepaper-section li {
-            text-align: justify;
-            line-height: 1.9;
+            margin-top: 40px;
             margin-bottom: 20px;
-            font-size: 1.2rem;
+            border-left: 3px solid var(--glow-cyan);
+            padding-left: 15px;
+        }
+
+        .whitepaper-section h4 {
+            font-size: 1.5rem; /* Increased */
+            color: var(--text-white);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .whitepaper-section p {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
         
         .whitepaper-section ul {
             list-style: none;
-            padding-left: 30px;
+            padding-left: 20px;
+        }
+
+        .whitepaper-section li {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            position: relative;
         }
 
         .whitepaper-section li::before {
             content: '■';
             position: absolute;
-            left: -30px;
+            left: -20px;
             color: var(--glow-cyan);
-            font-size: 1em;
-            top: 10px;
+            font-size: 0.8em;
         }
+
 
         footer {
             text-align: center;
-            padding: 60px 0;
+            padding: 50px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        footer .logo { margin-bottom: 25px; display: inline-block; }
-        .footer-links { margin-bottom: 25px; }
-        .footer-links a { margin: 0 20px; text-decoration: none; color: var(--text-light); }
-        .footer-contact { line-height: 1.8; }
-
-        /* --- AJUSTE DE RESPONSIVIDADE --- */
-        @media (max-width: 1200px) {
-            .hero h1 { font-size: 5rem; }
-            h2 { font-size: 2.8rem; }
+        footer .logo { margin-bottom: 20px; display: inline-block; }
+        .footer-links a { margin: 0 15px; text-decoration: none; color: var(--text-light); }
+        .footer-contact { margin-top: 20px; line-height: 1.8; }
+        /* Targeting the copyright paragraph specifically for font size increase */
+        footer .container > p:last-child {
+            font-size: 0.9rem; /* Increased from inline 0.8rem */
         }
 
-        @media (max-width: 992px) {
-            .hero h1 { font-size: 4rem; }
-            .hero p { font-size: 1.3rem; }
-            h2 { font-size: 2.5rem; }
-            .whitepaper-section { padding: 40px; }
-        }
-        
         @media (max-width: 768px) {
-            body { font-size: 18px; } /* Mantém uma base maior em tablets */
-            .hero h1 { font-size: 3rem; letter-spacing: -1px; }
-            .hero p { font-size: 1.1rem; }
-            h2 { font-size: 2.2rem; }
-            .cta-button-header { display: none; } /* Esconde botão do header em mobile */
+            /* Adjusted font sizes for mobile for consistency with increases */
+            .hero h1 { font-size: 2.8rem; } /* Increased */
+            .hero p { font-size: 1.1rem; } /* Increased */
+            h2 { font-size: 2.2rem; } /* Increased */
+            nav { display: none; }
             
             .timeline::after { left: 31px; }
             .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; }
             .timeline-container.left::after, .timeline-container.right::after { left: 15px; }
             .timeline-container.right { left: 0%; }
 
-            .whitepaper-section { padding: 30px 20px; }
             .whitepaper-section p, .whitepaper-section li { text-align: left; }
         }
 
@@ -381,7 +378,14 @@
 
     <header id="main-header">
         <a href="#" class="logo">ECOM<span>NIX</span></a>
-        <a href="#contact" class="cta-button-header">Contato</a>
+        <nav>
+            <a href="#problem">O Problema</a>
+            <a href="#solution">A Solução</a>
+            <a href="#tech">Tecnologia</a>
+            <a href="#whitepaper">White Paper</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#contact" class="cta-button-nav">Contato</a>
+        </nav>
     </header>
 
     <main>
@@ -411,7 +415,7 @@
 
         <section id="solution" class="container section">
              <h2>A Solução: <span>ECOMNIX</span></h2>
-             <p style="text-align:center; max-width: 1000px; margin: -60px auto 70px auto; font-size: 1.4rem;">Nós não somos mais um marketplace. Somos um organismo digital que orquestra a regeneração ambiental em tempo real, funcionando como o nexo que conecta terra, tecnologia, comunidades e ciência, com base em três pilares:</p>
+             <p style="text-align:center; max-width: 800px; margin: -40px auto 60px auto; font-size: 1.1rem;">Nós não somos mais um marketplace. Somos um organismo digital que orquestra a regeneração ambiental em tempo real, funcionando como o nexo que conecta terra, tecnologia, comunidades e ciência, com base em três pilares:</p>
             <div class="grid-3">
                  <div class="card">
                     <h3>Automação Radical</h3>
@@ -583,12 +587,13 @@
                 <p><a href="mailto:contato@ecomnix.eco" style="color: var(--glow-cyan); text-decoration: none;">contato@ecomnix.eco</a></p>
             </div>
              <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.5;">&copy; 2025 ECOMNIX. Todos os direitos reservados. Arquitetando o futuro regenerativo.</p>
+             <!-- The inline style font-size: 0.8rem above will be overridden by the CSS rule: footer .container > p:last-child -->
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // EFEITO DE HEADER AO ROLAR
+        // --- EFEITO DE HEADER AO ROLAR ---
         const header = document.getElementById('main-header');
         window.onscroll = function() {
             if (window.scrollY > 50) {
@@ -598,7 +603,7 @@
             }
         };
 
-        // ANIMAÇÃO DE ELEMENTOS AO ROLAR
+        // --- ANIMAÇÃO DE ELEMENTOS AO ROLAR ---
         const sections = document.querySelectorAll('.section');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -613,19 +618,21 @@
             observer.observe(section);
         });
 
-        // ANIMAÇÃO 3D ATMOSFÉRICA
-        let scene, camera, renderer, particles;
+        // --- ANIMAÇÃO 3D NO HERO ---
+        let scene, camera, renderer, particles, mouseX = 0, mouseY = 0;
+        const windowHalfX = window.innerWidth / 2;
+        const windowHalfY = window.innerHeight / 2;
 
         function init() {
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-            camera.position.z = 800;
+            camera.position.z = 1000;
 
             const geometry = new THREE.BufferGeometry();
             const vertices = [];
             const sprite = new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/disc.png');
 
-            for (let i = 0; i < 7000; i++) {
+            for (let i = 0; i < 10000; i++) {
                 const x = 2000 * Math.random() - 1000;
                 const y = 2000 * Math.random() - 1000;
                 const z = 2000 * Math.random() - 1000;
@@ -634,14 +641,13 @@
             geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
             const material = new THREE.PointsMaterial({
-                size: 6,
+                size: 8,
                 map: sprite,
                 blending: THREE.AdditiveBlending,
                 depthTest: false,
                 transparent: true
             });
-            
-            material.color.setHSL(0.5, 0.7, 0.5); 
+            material.color.setHSL(0.5, 0.7, 0.5);
 
             particles = new THREE.Points(geometry, material);
             scene.add(particles);
@@ -650,6 +656,7 @@
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(window.innerWidth, window.innerHeight);
 
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
             window.addEventListener('resize', onWindowResize, false);
         }
 
@@ -659,17 +666,35 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         }
 
+        function onDocumentMouseMove(event) {
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+        }
+
         function animate() {
             requestAnimationFrame(animate);
             render();
         }
 
         function render() {
-            particles.rotation.x += 0.00005;
-            particles.rotation.y += 0.0001;
+            const time = Date.now() * 0.00005;
+            
+            // --- OTIMIZAÇÃO APLICADA E AJUSTADA ---
+            // Fator de suavização diminuído para um movimento ainda mais suave (0.015 para 0.01)
+            camera.position.x += (mouseX - camera.position.x) * 0.01;
+            camera.position.y += (-mouseY - camera.position.y) * 0.01;
+            camera.lookAt(scene.position);
+            
+            // Rotação constante das partículas já está removida (linhas abaixo comentadas)
+            // particles.rotation.x += 0.0005; 
+            // particles.rotation.y += 0.001;
+
+            const h = (360 * (0.5 + time * 0.1) % 360) / 360;
+            particles.material.color.setHSL(h, 0.7, 0.5);
+
             renderer.render(scene, camera);
         }
-        
+
         init();
         animate();
     </script>
