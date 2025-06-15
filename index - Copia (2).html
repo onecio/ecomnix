@@ -11,9 +11,9 @@
             --dark-indigo: #0D1B2A;
             --dark-green: #0C221A;
             --glow-cyan: #00FFFF;
-            --text-light: #F0F2F5; 
+            --text-light: #F0F2F5; /* Levemente mais claro */
             --text-white: #FFFFFF;
-            --glass-bg: rgba(255, 255, 255, 0.07); 
+            --glass-bg: rgba(255, 255, 255, 0.07); /* Efeito de vidro mais pronunciado */
         }
 
         * {
@@ -33,7 +33,8 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            font-size: 22px; 
+            /* --- AJUSTE DE FONTE 1: Aumento significativo da Fonte Base --- */
+            font-size: 22px; /* Aumentado de 20px para 22px */
         }
         
         #hero-canvas {
@@ -45,11 +46,12 @@
             z-index: -1;
         }
 
+        /* --- AJUSTE DE CONTAINER 1: Aumento máximo da Largura --- */
         .container {
-            width: 96%;
-            max-width: 1800px;
+            width: 96%; /* Aumentado de 95% para ocupar mais espaço */
+            max-width: 1800px; /* Aumentado de 1600px para 1800px */
             margin: 0 auto;
-            padding: 140px 0;
+            padding: 140px 0; /* Mais espaçamento vertical */
             position: relative;
             z-index: 2;
         }
@@ -59,7 +61,7 @@
             width: 100%;
             top: 0;
             left: 0;
-            padding: 25px 2%;
+            padding: 25px 2%; /* Ajustado para alinhar com o novo container */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -75,7 +77,7 @@
 
         .logo {
             font-size: 2.2rem; 
-            font-weight: 800;
+            font-weight: 800; /* Mais peso */
             color: var(--text-white);
             text-decoration: none;
             letter-spacing: 1px;
@@ -83,41 +85,28 @@
         
         .logo span {
             color: var(--glow-cyan);
-            text-shadow: 0 0 15px var(--glow-cyan);
+            text-shadow: 0 0 15px var(--glow-cyan); /* Destaque maior */
         }
 
-        /* --- AJUSTE NO HEADER PARA O BOTÃO DO WHITE PAPER --- */
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        .header-nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-        .header-nav a:hover {
-            color: var(--glow-cyan);
-            text-shadow: 0 0 5px var(--glow-cyan);
-        }
+        /* Removendo o menu de navegação para um foco total no topo, como é comum em landing pages de alto impacto */
+        nav { display: none; }
+        
         .cta-button-header {
-            background: transparent;
-            border: 1px solid var(--glow-cyan);
-            color: var(--glow-cyan);
-            padding: 12px 24px;
+             background: var(--glow-cyan);
+            color: var(--dark-indigo);
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1rem;
-            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
         .cta-button-header:hover {
-            background-color: var(--glow-cyan);
-            color: var(--dark-indigo);
-            box-shadow: 0 0 15px var(--glow-cyan);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.9);
         }
+
 
         .hero {
             height: 100vh;
@@ -129,37 +118,38 @@
             padding: 0 2%;
         }
 
+        /* --- AJUSTE DE DESTAQUE TOPO 2: Título principal maior e mais pesado --- */
         .hero h1 {
-            font-size: 6rem;
-            font-weight: 800;
+            font-size: 6rem; /* Aumento significativo */
+            font-weight: 800; /* Extra Bold */
             color: var(--text-white);
             line-height: 1.05;
             margin-bottom: 30px;
             text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
             max-width: 1200px;
-            letter-spacing: -2px;
+            letter-spacing: -2px; /* Letras mais juntas para impacto */
         }
 
         .hero p {
-            font-size: 1.6rem;
+            font-size: 1.6rem; /* Aumentado */
             max-width: 950px; 
             margin-bottom: 50px;
             line-height: 1.7;
             font-weight: 400;
         }
 
+        /* --- AJUSTE DE DESTAQUE TOPO 3: Botão de ação maior --- */
         .cta-button {
             background: var(--glow-cyan);
             color: var(--dark-indigo);
-            padding: 22px 55px;
+            padding: 22px 55px; /* Muito maior */
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.4rem; /* Maior */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
             border: 2px solid transparent;
-            display: inline-block;
         }
         
         .cta-button:hover {
@@ -179,7 +169,7 @@
         }
 
         h2 {
-            font-size: 3.5rem;
+            font-size: 3.5rem; /* Aumentado */
             text-align: center;
             margin-bottom: 80px;
             color: var(--text-white);
@@ -200,7 +190,7 @@
         .card {
             background: var(--glass-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border-radius: 20px; /* Mais arredondado */
             padding: 45px;
             backdrop-filter: blur(12px);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -213,29 +203,84 @@
         }
 
         .card h3 {
-            font-size: 2rem;
+            font-size: 2rem; /* Aumentado */
             color: var(--glow-cyan);
             margin-bottom: 20px;
         }
 
         .card p, .card li {
             line-height: 1.8;
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Aumentado */
         }
         
-        /* Estilos demais permanecem os mesmos... */
-        .timeline { position: relative; max-width: 1800px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--glow-cyan); top: 0; bottom: 0; left: 50%; margin-left: -3px; box-shadow: 0 0 15px var(--glow-cyan); opacity: 0.3; }
-        .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+        .timeline {
+            position: relative;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--glow-cyan);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            box-shadow: 0 0 15px var(--glow-cyan);
+            opacity: 0.3;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
         .timeline-container.left { left: 0; }
         .timeline-container.right { left: 50%; }
-        .timeline-container::after { content: ''; position: absolute; width: 25px; height: 25px; right: -17px; background-color: var(--dark-indigo); border: 4px solid var(--glow-cyan); top: 15px; border-radius: 50%; z-index: 1; box-shadow: 0 0 15px var(--glow-cyan); }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: var(--dark-indigo);
+            border: 4px solid var(--glow-cyan);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 15px var(--glow-cyan);
+        }
+
         .right::after { left: -16px; }
-        .timeline-content { padding: 30px 40px; background: var(--glass-bg); position: relative; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .timeline-content h3 { color: var(--text-white); margin-bottom: 15px; font-size: 1.6rem; }
-        .cta-section { text-align: center; background: linear-gradient(180deg, var(--dark-indigo) 0%, var(--dark-green) 100%); border-radius: 20px; padding: 90px 40px; }
+
+        .timeline-content {
+            padding: 30px 40px;
+            background: var(--glass-bg);
+            position: relative;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-size: 1.6rem; /* Aumentado */
+        }
+        
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(180deg, var(--dark-indigo) 0%, var(--dark-green) 100%);
+            border-radius: 20px;
+            padding: 90px 40px;
+        }
+        
         .cta-section h2 { margin-bottom: 25px; }
-        .cta-section p { margin-bottom: 50px; font-size: 1.6rem; }
+        .cta-section p { margin-bottom: 50px; font-size: 1.6rem; /* Aumentado */ }
 
         .whitepaper-section {
             background: var(--glass-bg);
@@ -245,17 +290,47 @@
             backdrop-filter: blur(12px);
         }
 
-        .whitepaper-section h2 { font-size: 3rem; text-align: left; margin-bottom: 35px; }
-        .whitepaper-section h3 { font-size: 2.4rem; color: var(--glow-cyan); margin-top: 55px; margin-bottom: 30px; border-left: 4px solid var(--glow-cyan); padding-left: 25px; }
-        .whitepaper-section h4 { font-size: 1.9rem; color: var(--text-white); margin-top: 45px; margin-bottom: 25px; }
-        .whitepaper-section p, .whitepaper-section li { text-align: justify; line-height: 1.9; margin-bottom: 20px; font-size: 1.2rem; }
-        .whitepaper-section ul { list-style: none; padding-left: 30px; }
-        .whitepaper-section li::before { content: '■'; position: absolute; left: -30px; color: var(--glow-cyan); font-size: 1em; top: 10px; }
+        .whitepaper-section h2 {
+            font-size: 3rem; 
+            text-align: left;
+            margin-bottom: 35px;
+        }
+
+        .whitepaper-section h3 {
+            font-size: 2.4rem; 
+            color: var(--glow-cyan);
+            margin-top: 55px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--glow-cyan);
+            padding-left: 25px;
+        }
         
-        /* --- ESTILO PARA O NOVO BOTÃO DO PDF --- */
-        .pdf-button-wrapper {
-            text-align: center;
-            margin-top: 40px;
+        .whitepaper-section h4 {
+            font-size: 1.9rem;
+            color: var(--text-white);
+            margin-top: 45px;
+            margin-bottom: 25px;
+        }
+        
+        .whitepaper-section p, .whitepaper-section li {
+            text-align: justify;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .whitepaper-section ul {
+            list-style: none;
+            padding-left: 30px;
+        }
+
+        .whitepaper-section li::before {
+            content: '■';
+            position: absolute;
+            left: -30px;
+            color: var(--glow-cyan);
+            font-size: 1em;
+            top: 10px;
         }
 
         footer {
@@ -269,10 +344,10 @@
         .footer-links a { margin: 0 20px; text-decoration: none; color: var(--text-light); }
         .footer-contact { line-height: 1.8; }
 
+        /* --- AJUSTE DE RESPONSIVIDADE --- */
         @media (max-width: 1200px) {
             .hero h1 { font-size: 5rem; }
             h2 { font-size: 2.8rem; }
-            .header-nav a:not(.cta-button-header) { display: none; }
         }
 
         @media (max-width: 992px) {
@@ -283,11 +358,11 @@
         }
         
         @media (max-width: 768px) {
-            body { font-size: 18px; }
+            body { font-size: 18px; } /* Mantém uma base maior em tablets */
             .hero h1 { font-size: 3rem; letter-spacing: -1px; }
             .hero p { font-size: 1.1rem; }
             h2 { font-size: 2.2rem; }
-            .cta-button-header { font-size: 0.9rem; padding: 10px 20px; }
+            .cta-button-header { display: none; } /* Esconde botão do header em mobile */
             
             .timeline::after { left: 31px; }
             .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; }
@@ -306,10 +381,7 @@
 
     <header id="main-header">
         <a href="#" class="logo">ECOM<span>NIX</span></a>
-        <div class="header-nav">
-             <a href="ewp.pdf" target="_blank" class="cta-button-header">Ler o White Paper</a>
-             <a href="#contact">Contato</a>
-        </div>
+        <a href="#contact" class="cta-button-header">Contato</a>
     </header>
 
     <main>
@@ -420,14 +492,6 @@
             
             <h3>Resumo Executivo</h3>
             <p>A emergência climática configura-se como a principal crise de nosso tempo, exigindo soluções disruptivas que transcendam modelos econômicos lineares e hierárquicos. A ECOMNIX propõe-se como uma plataforma digital de próxima geração, que integra Inteligência Artificial (IA) e Blockchain para democratizar, escalar e verificar projetos de carbono com rigor científico e transparência sem precedentes. Ao transformar dados brutos de satélites, sensores IoT e cadastros locais em insights acionáveis e contratos inteligentes, a ECOMNIX habilita a transformação de ativos naturais em créditos de carbono tokenizados, distribuindo valor econômico de forma justa para comunidades rurais, povos tradicionais e investidores globais. Este White Paper detalha a arquitetura técnica, o modelo de negócios, o impacto socioambiental e as implicações do PL 1436/24, posicionando a plataforma como catalisadora de uma economia regenerativa inclusiva.</p>
-            
-            <div class="pdf-button-wrapper">
-                <a href="ewp.pdf" target="_blank" class="cta-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                    Acessar o White Paper Completo (PDF)
-                </a>
-            </div>
-
 
             <h3>Capítulo 1: O Imperativo da Ação Climática e a Insuficiência dos Modelos Atuais</h3>
             <h4>1.1 A Realidade dos Extremos Climáticos</h4>
