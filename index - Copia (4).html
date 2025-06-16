@@ -45,11 +45,12 @@
             z-index: -1;
         }
 
+        /* --- AJUSTE DE CONTAINER 1: Margens laterais e verticais --- */
         .container {
-            width: 90%;
-            max-width: 1700px;
+            width: 90%; /* Reduzido de 96% para AUMENTAR as margens laterais */
+            max-width: 1700px; /* Reduzido de 1800px para complementar */
             margin: 0 auto;
-            padding: 90px 0;
+            padding: 90px 0; /* Reduzido de 140px para DIMINUIR os espaços verticais */
             position: relative;
             z-index: 2;
         }
@@ -59,7 +60,7 @@
             width: 100%;
             top: 0;
             left: 0;
-            padding: 25px 5%;
+            padding: 25px 5%; /* Ajustado para alinhar com o novo container */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -110,7 +111,6 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 1rem;
-            white-space: nowrap; /* Impede que o texto quebre */
             transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         }
         .cta-button-header:hover {
@@ -267,26 +267,17 @@
         .footer-links a { margin: 0 20px; text-decoration: none; color: var(--text-light); }
         .footer-contact { line-height: 1.8; }
 
-        /* --- AJUSTE DE RESPONSIVIDADE (MOBILE) --- */
+        /* --- AJUSTE DE RESPONSIVIDADE 2: Otimizações para mobile --- */
         @media (max-width: 768px) {
-            body { font-size: 17px; }
+            body { font-size: 17px; /* Base confortável para mobile */ }
             
-            .container { padding: 60px 0; }
+            .container { padding: 60px 0; /* Espaçamento vertical menor em mobile */ }
 
-            header { padding: 20px 5%; }
-            .logo { font-size: 1.8rem; } /* Diminui o logo no mobile */
-
-            /* Ajustes para o botão do header no mobile */
-            .header-nav { gap: 15px; }
-            .header-nav a:not(.cta-button-header) { display: none; } /* Esconde o link "Contato" */
-            .cta-button-header { 
-                font-size: 0.85rem; 
-                padding: 8px 16px; 
-            }
-
-            .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            .hero h1 { font-size: 3rem; letter-spacing: -1px; }
             .hero p { font-size: 1.1rem; }
             h2 { font-size: 2.2rem; margin-bottom: 50px; }
+            .header-nav { gap: 15px; }
+            .cta-button-header { font-size: 0.9rem; padding: 10px 20px; }
             
             .timeline::after { left: 31px; }
             .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; }
@@ -410,93 +401,99 @@
                 <a href="#contact" class="cta-button">Junte-se a Nós</a>
             </div>
         </section>
-        
-        <article id="whitepaper" class="container section">
-            <div class="whitepaper-section">
-                <h2>ECOMNIX: Arquitetando a Próxima Geração de Mercados de Carbono</h2>
-                
-                <h3>Resumo Executivo</h3>
-                <p>A emergência climática configura-se como a principal crise de nosso tempo, exigindo soluções disruptivas que transcendam modelos econômicos lineares e hierárquicos. A ECOMNIX propõe-se como uma plataforma digital de próxima geração, que integra Inteligência Artificial (IA) e Blockchain para democratizar, escalar e verificar projetos de carbono com rigor científico e transparência sem precedentes. Ao transformar dados brutos de satélites, sensores IoT e cadastros locais em insights acionáveis e contratos inteligentes, a ECOMNIX habilita a transformação de ativos naturais em créditos de carbono tokenizados, distribuindo valor econômico de forma justa para comunidades rurais, povos tradicionais e investidores globais. Este White Paper detalha a arquitetura técnica, o modelo de negócios, o impacto socioambiental e as implicações do PL 1436/24, posicionando a plataforma como catalisadora de uma economia regenerativa inclusiva.</p>
-                
-                <div class="pdf-button-wrapper">
-                    <a href="ewp.pdf" target="_blank" class="cta-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Acessar o White Paper Completo (PDF)
-                    </a>
-                </div>
 
-                <h3>Capítulo 1: O Imperativo da Ação Climática e a Insuficiência dos Modelos Atuais</h3>
-                <h4>1.1 A Realidade dos Extremos Climáticos</h4>
-                <p>Nos últimos cinco anos, a frequência de ondas de calor no Pantanal aumentou em 40%, enquanto eventos intensos de precipitação avançam a uma taxa de 20% ao ano, segundo dados da USP e do Inpe. Essa volatilidade acelera a erosão do solo, reduz a capacidade de infiltração hídrica e eleva o risco de incêndios florestais em até 60% durante a estação seca. A perda anual de biodiversidade, estimada em 1,2 milhão de hectares, impacta diretamente a fonte de subsistência de milhões de famílias rurais, gerando migração interna e pressionando zonas urbanas.</p>
-                <h4>1.2 As Barreiras do Mercado de Carbono Tradicional</h4>
-                <p>Apesar de movimentar US$2 bilhões anuais globalmente (Voluntary Carbon Market Insights, 2024), o mercado de carbono enfrenta três grandes deficiências:</p>
-                <ul>
-                    <li><strong>Transparência e Auditoria:</strong> relatórios manualmente compilados e auditorias anuais permitem fraudes e dupla contagem, comprometendo a credibilidade.</li>
-                    <li><strong>Custos de Transação:</strong> certificação Verra ou Gold Standard ultrapassa US$50.000 por projeto, inviabilizando iniciativas de menor porte.</li>
-                    <li><strong>Inclusão:</strong> 85% dos recursos fluem para grandes projetos florestais, excluindo agricultores familiares e cooperativas, que carecem de capital e acesso a expertise técnica.</li>
-                </ul>
-                <p>Esses gargalos reduzem o impacto real das iniciativas de carbono e limitam a dispersão de benefícios para as comunidades diretamente responsáveis pela conservação e restauração.</p>
-                <h3>Capítulo 2: A Visão ECOMNIX – Um Ecossistema Regenerativo e Democrático</h3>
-                <h4>2.1 Princípios Fundamentais</h4>
-                <ul>
-                    <li><strong>Governança Distribuída:</strong> uso de uma DAO (baseada em Aragon e Snapshot) que garante representação proporcional: 30% para comunidades locais (indígenas, quilombolas), 30% para pequenos produtores, 20% para ONGs ambientais e 20% para investidores.</li>
-                    <li><strong>Economia Circular de Carbono:</strong> cada fluxo de resíduos orgânicos, biomassa e práticas agroflorestais integra-se em cadeias de valor regenerativas, de modo a minimizar desperdícios e maximizar o sequestro.</li>
-                    <li><strong>Padrão Ouro de Transparência:</strong> toda métrica de desempenho (NDVI, LAI, biomassa) é indexada e assinada por oráculos Chainlink, validada em blockchain e disponibilizada em dashboards públicos.</li>
-                </ul>
-                <h4>2.2 Redefinindo Valor</h4>
-                <p>A ECOMNIX converte serviços ecossistêmicos—sequestro de CO₂, regulação hídrica, habitat para fauna—em ativos financeiros. Por meio de tokenização ERC-20 e NFTs de passaporte digital, é possível negociar parcelas de projetos, pulverizando o risco e atraindo capital de impacto de forma segura e escalável.</p>
-                <h3>Capítulo 3: A Arquitetura da Solução – A Plataforma ECOMNIX</h3>
-                <h4>3.1 O Núcleo de Inteligência Artificial (IA)</h4>
-                <ul>
-                    <li><strong>Ingestão e Pré-processamento de Dados:</strong> pipelines em Apache Kafka consomem streams de satélite Sentinel-2 e Planet, integrados com APIs do Inpe e cadastros rurais do Sigef. Dados são normalizados em um data lake no Amazon S3.</li>
-                    <li><strong>Modelos de Mapeamento Preditivo:</strong> redes neurais convolucionais (CNN) customizadas identificam cobertura vegetal e estimam biomassa acima e abaixo do solo, calibradas por amostras em campo via drones DJI Mavic.</li>
-                    <li><strong>Matchmaking de Projetos:</strong> algoritmos de otimização multiobjetivo (NSGA-II) combinam resíduos agrícolas com potenciais de produção de biogás e hidrogênio verde.</li>
-                    <li><strong>Interface de Prospecção:</strong> módulos de CRM integrado (Salesforce) disparam propostas automáticas via WhatsApp Business API com contratos inteligentes prontos.</li>
-                </ul>
-                <h4>3.2 A Camada de Confiança (Blockchain)</h4>
-                <ul>
-                    <li><strong>Ledger Descentralizado:</strong> baseado em Hyperledger Fabric para rede permissionada e Ethereum L2 (Polygon) para tokenização pública.</li>
-                    <li><strong>Smart Contracts:</strong> desenvolvidos em Solidity, auditados por Certik, automatizam emissões e pagamentos.</li>
-                    <li><strong>Oráculos e Telemetria:</strong> Chainlink opera feeds de dados de sensores IoT (LoRaWAN) e modelos climáticos NOAA para verificações periódicas.</li>
-                    <li><strong>Passaporte Digital de Carbono:</strong> NFT padrão ERC-721 armazena metadados completos (geotags, metodologias, histórico), proporcionando rastreabilidade total.</li>
-                </ul>
-                <h3>Capítulo 4: Casos de Uso e Aplicações Práticas</h3>
-                <h4>4.1 Tipos de Projetos de Carbono Possíveis e Elegíveis</h4>
-                <p>A ECOMNIX foi projetada para abranger todo o espectro de oportunidades de mitigação, incluindo, mas não se limitando a:</p>
-                <ul>
-                    <li>Reflorestamento e Aflorescimento (A/R)</li>
-                    <li>REDD+ (Redução de Emissões por Desmatamento e Degradação Florestal)</li>
-                    <li>Agricultura Regenerativa e Solos de Carbono</li>
-                    <li>Bioenergia com Captura e Armazenamento de Carbono (BECCS)</li>
-                    <li>Blue Carbon (Manguezais, Marismas)</li>
-                    <li>Restauração de Turfeiras</li>
-                    <li>Captura Direta de Ar (DAC)</li>
-                    <li>Gás de Aterro e Digestão Anaeróbica</li>
-                    <li>Melhoria de Fornos e Fogões em Comunidades</li>
-                </ul>
-                <h4>4.2 Exemplos Práticos</h4>
-                <ul>
-                    <li><strong>Reflorestamento Dinâmico:</strong> cooperativas como Agroflorestar-MS reconstroem mosaicos de espécies nativas, com monitoramento de NDVI a cada 30 dias.</li>
-                    <li><strong>Manejo Florestal de Precisão:</strong> sensores acústicos detectam focos de incêndio, acionando alertas automatizados.</li>
-                    <li><strong>Agricultura de Baixo Carbono:</strong> sistemas silvipastoris que reduzem emissões de CH₄ em 25% e aumentam sequestro em 15 t CO₂e/ha/ano.</li>
-                    <li><strong>Bioenergia e Resíduos:</strong> cooperativas transformam resíduos orgânicos em biogás, integrados à rede elétrica local via smart grid.</li>
-                    <li><strong>Proteção de Bacias Hidrográficas:</strong> recuperação de mata ciliar com sensores de umidade para garantir serviços ecossistêmicos.</li>
-                </ul>
-                <h3>Capítulo 5: Modelo Econômico e o Catalisador de Mercado</h3>
-                <h4>5.1 Geração de Receita Sustentável</h4>
-                <ul>
-                    <li><strong>Comissão Variável:</strong> 1–3% sobre transações de créditos.</li>
-                    <li><strong>Planos de Assinatura:</strong> Tiers com acesso a APIs avançadas e relatórios de risco climático.</li>
-                    <li><strong>Mercado Secundário de NFTs:</strong> Royalties automáticos de 0,5% para manutenção da plataforma.</li>
-                    <li><strong>Financiamento por Impacto:</strong> Emissão de Green Bonds tokenizados.</li>
-                </ul>
-                <h4>5.2 A Alavanca do Projeto de Lei 1436/24</h4>
-                <p>O PL 1436/24 propõe abatimento de até 50% do IRPJ/CSLL na agropecuária para créditos de carbono certificados. Estima-se que essa desoneração poderá ativar R$6 bilhões em compras internas no primeiro ano. A ECOMNIX, com sua camada de compliance fiscal integrada, está pronta para emitir os certificados e relatórios necessários.</p>
-                <h3>Capítulo 6: Conclusão e O Caminho a Seguir</h3>
-                <p>A ECOMNIX estabelece um novo paradigma para mercados de carbono, superando as limitações atuais por meio de tecnologia de ponta, governança inclusiva e incentivo fiscal. Convidamos governos, legisladores, investidores de impacto, corporações com metas ESG e ONGs a unir forças para escalar essa solução. Juntos, podemos catalisar a regeneração planetária, fomentar economias locais resilientes e assegurar a harmonia entre desenvolvimento humano e integridade ambiental.</p>
-            </div>
-        </article>
     </main>
+
+    <article id="whitepaper" class="container section">
+        <div class="whitepaper-section">
+            <h2>ECOMNIX: Arquitetando a Próxima Geração de Mercados de Carbono</h2>
+            
+            <h3>Resumo Executivo</h3>
+            <p>A emergência climática configura-se como a principal crise de nosso tempo, exigindo soluções disruptivas que transcendam modelos econômicos lineares e hierárquicos. A ECOMNIX propõe-se como uma plataforma digital de próxima geração, que integra Inteligência Artificial (IA) e Blockchain para democratizar, escalar e verificar projetos de carbono com rigor científico e transparência sem precedentes. Ao transformar dados brutos de satélites, sensores IoT e cadastros locais em insights acionáveis e contratos inteligentes, a ECOMNIX habilita a transformação de ativos naturais em créditos de carbono tokenizados, distribuindo valor econômico de forma justa para comunidades rurais, povos tradicionais e investidores globais. Este White Paper detalha a arquitetura técnica, o modelo de negócios, o impacto socioambiental e as implicações do PL 1436/24, posicionando a plataforma como catalisadora de uma economia regenerativa inclusiva.</p>
+            
+            <div class="pdf-button-wrapper">
+                <a href="ewp.pdf" target="_blank" class="cta-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Acessar o White Paper Completo (PDF)
+                </a>
+            </div>
+
+            <h3>Capítulo 1: O Imperativo da Ação Climática e a Insuficiência dos Modelos Atuais</h3>
+            <h4>1.1 A Realidade dos Extremos Climáticos</h4>
+            <p>Nos últimos cinco anos, a frequência de ondas de calor no Pantanal aumentou em 40%, enquanto eventos intensos de precipitação avançam a uma taxa de 20% ao ano, segundo dados da USP e do Inpe. Essa volatilidade acelera a erosão do solo, reduz a capacidade de infiltração hídrica e eleva o risco de incêndios florestais em até 60% durante a estação seca. A perda anual de biodiversidade, estimada em 1,2 milhão de hectares, impacta diretamente a fonte de subsistência de milhões de famílias rurais, gerando migração interna e pressionando zonas urbanas.</p>
+            <h4>1.2 As Barreiras do Mercado de Carbono Tradicional</h4>
+            <p>Apesar de movimentar US$2 bilhões anuais globalmente (Voluntary Carbon Market Insights, 2024), o mercado de carbono enfrenta três grandes deficiências:</p>
+            <ul>
+                <li><strong>Transparência e Auditoria:</strong> relatórios manualmente compilados e auditorias anuais permitem fraudes e dupla contagem, comprometendo a credibilidade.</li>
+                <li><strong>Custos de Transação:</strong> certificação Verra ou Gold Standard ultrapassa US$50.000 por projeto, inviabilizando iniciativas de menor porte.</li>
+                <li><strong>Inclusão:</strong> 85% dos recursos fluem para grandes projetos florestais, excluindo agricultores familiares e cooperativas, que carecem de capital e acesso a expertise técnica.</li>
+            </ul>
+            <p>Esses gargalos reduzem o impacto real das iniciativas de carbono e limitam a dispersão de benefícios para as comunidades diretamente responsáveis pela conservação e restauração.</p>
+
+            <h3>Capítulo 2: A Visão ECOMNIX – Um Ecossistema Regenerativo e Democrático</h3>
+            <h4>2.1 Princípios Fundamentais</h4>
+            <ul>
+                <li><strong>Governança Distribuída:</strong> uso de uma DAO (baseada em Aragon e Snapshot) que garante representação proporcional: 30% para comunidades locais (indígenas, quilombolas), 30% para pequenos produtores, 20% para ONGs ambientais e 20% para investidores.</li>
+                <li><strong>Economia Circular de Carbono:</strong> cada fluxo de resíduos orgânicos, biomassa e práticas agroflorestais integra-se em cadeias de valor regenerativas, de modo a minimizar desperdícios e maximizar o sequestro.</li>
+                <li><strong>Padrão Ouro de Transparência:</strong> toda métrica de desempenho (NDVI, LAI, biomassa) é indexada e assinada por oráculos Chainlink, validada em blockchain e disponibilizada em dashboards públicos.</li>
+            </ul>
+            <h4>2.2 Redefinindo Valor</h4>
+            <p>A ECOMNIX converte serviços ecossistêmicos—sequestro de CO₂, regulação hídrica, habitat para fauna—em ativos financeiros. Por meio de tokenização ERC-20 e NFTs de passaporte digital, é possível negociar parcelas de projetos, pulverizando o risco e atraindo capital de impacto de forma segura e escalável.</p>
+
+            <h3>Capítulo 3: A Arquitetura da Solução – A Plataforma ECOMNIX</h3>
+            <h4>3.1 O Núcleo de Inteligência Artificial (IA)</h4>
+            <ul>
+                <li><strong>Ingestão e Pré-processamento de Dados:</strong> pipelines em Apache Kafka consomem streams de satélite Sentinel-2 e Planet, integrados com APIs do Inpe e cadastros rurais do Sigef. Dados são normalizados em um data lake no Amazon S3.</li>
+                <li><strong>Modelos de Mapeamento Preditivo:</strong> redes neurais convolucionais (CNN) customizadas identificam cobertura vegetal e estimam biomassa acima e abaixo do solo, calibradas por amostras em campo via drones DJI Mavic.</li>
+                <li><strong>Matchmaking de Projetos:</strong> algoritmos de otimização multiobjetivo (NSGA-II) combinam resíduos agrícolas com potenciais de produção de biogás e hidrogênio verde.</li>
+                <li><strong>Interface de Prospecção:</strong> módulos de CRM integrado (Salesforce) disparam propostas automáticas via WhatsApp Business API com contratos inteligentes prontos.</li>
+            </ul>
+            <h4>3.2 A Camada de Confiança (Blockchain)</h4>
+            <ul>
+                <li><strong>Ledger Descentralizado:</strong> baseado em Hyperledger Fabric para rede permissionada e Ethereum L2 (Polygon) para tokenização pública.</li>
+                <li><strong>Smart Contracts:</strong> desenvolvidos em Solidity, auditados por Certik, automatizam emissões e pagamentos.</li>
+                <li><strong>Oráculos e Telemetria:</strong> Chainlink opera feeds de dados de sensores IoT (LoRaWAN) e modelos climáticos NOAA para verificações periódicas.</li>
+                <li><strong>Passaporte Digital de Carbono:</strong> NFT padrão ERC-721 armazena metadados completos (geotags, metodologias, histórico), proporcionando rastreabilidade total.</li>
+            </ul>
+
+            <h3>Capítulo 4: Casos de Uso e Aplicações Práticas</h3>
+            <h4>4.1 Tipos de Projetos de Carbono Possíveis e Elegíveis</h4>
+            <p>A ECOMNIX foi projetada para abranger todo o espectro de oportunidades de mitigação, incluindo, mas não se limitando a:</p>
+            <ul>
+                <li>Reflorestamento e Aflorescimento (A/R)</li>
+                <li>REDD+ (Redução de Emissões por Desmatamento e Degradação Florestal)</li>
+                <li>Agricultura Regenerativa e Solos de Carbono</li>
+                <li>Bioenergia com Captura e Armazenamento de Carbono (BECCS)</li>
+                <li>Blue Carbon (Manguezais, Marismas)</li>
+                <li>Restauração de Turfeiras</li>
+                <li>Captura Direta de Ar (DAC)</li>
+                <li>Gás de Aterro e Digestão Anaeróbica</li>
+                <li>Melhoria de Fornos e Fogões em Comunidades</li>
+            </ul>
+            <h4>4.2 Exemplos Práticos</h4>
+             <ul>
+                <li><strong>Reflorestamento Dinâmico:</strong> cooperativas como Agroflorestar-MS reconstroem mosaicos de espécies nativas, com monitoramento de NDVI a cada 30 dias.</li>
+                <li><strong>Manejo Florestal de Precisão:</strong> sensores acústicos detectam focos de incêndio, acionando alertas automatizados.</li>
+                <li><strong>Agricultura de Baixo Carbono:</strong> sistemas silvipastoris que reduzem emissões de CH₄ em 25% e aumentam sequestro em 15 t CO₂e/ha/ano.</li>
+                <li><strong>Bioenergia e Resíduos:</strong> cooperativas transformam resíduos orgânicos em biogás, integrados à rede elétrica local via smart grid.</li>
+                <li><strong>Proteção de Bacias Hidrográficas:</strong> recuperação de mata ciliar com sensores de umidade para garantir serviços ecossistêmicos.</li>
+            </ul>
+
+            <h3>Capítulo 5: Modelo Econômico e o Catalisador de Mercado</h3>
+            <h4>5.1 Geração de Receita Sustentável</h4>
+            <ul>
+                <li><strong>Comissão Variável:</strong> 1–3% sobre transações de créditos.</li>
+                <li><strong>Planos de Assinatura:</strong> Tiers com acesso a APIs avançadas e relatórios de risco climático.</li>
+                <li><strong>Mercado Secundário de NFTs:</strong> Royalties automáticos de 0,5% para manutenção da plataforma.</li>
+                <li><strong>Financiamento por Impacto:</strong> Emissão de Green Bonds tokenizados.</li>
+            </ul>
+            <h4>5.2 A Alavanca do Projeto de Lei 1436/24</h4>
+            <p>O PL 1436/24 propõe abatimento de até 50% do IRPJ/CSLL na agropecuária para créditos de carbono certificados. Estima-se que essa desoneração poderá ativar R$6 bilhões em compras internas no primeiro ano. A ECOMNIX, com sua camada de compliance fiscal integrada, está pronta para emitir os certificados e relatórios necessários.</p>
+
+            <h3>Capítulo 6: Conclusão e O Caminho a Seguir</h3>
+            <p>A ECOMNIX estabelece um novo paradigma para mercados de carbono, superando as limitações atuais por meio de tecnologia de ponta, governança inclusiva e incentivo fiscal. Convidamos governos, legisladores, investidores de impacto, corporações com metas ESG e ONGs a unir forças para escalar essa solução. Juntos, podemos catalisar a regeneração planetária, fomentar economias locais resilientes e assegurar a harmonia entre desenvolvimento humano e integridade ambiental.</p>
+        </div>
+    </article>
 
     <footer id="contact">
         <div class="container">
