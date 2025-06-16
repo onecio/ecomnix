@@ -45,10 +45,9 @@
             z-index: -1;
         }
 
-        /* --- AJUSTE 2: Aumento das margens laterais --- */
         .container {
-            width: 80%; /* Reduzido para aumentar as margens laterais */
-            max-width: 1400px; /* Reduzido para melhor legibilidade */
+            width: 90%;
+            max-width: 1700px;
             margin: 0 auto;
             padding: 90px 0;
             position: relative;
@@ -60,7 +59,7 @@
             width: 100%;
             top: 0;
             left: 0;
-            padding: 25px 10%; /* Ajustado para alinhar com o novo container */
+            padding: 25px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -111,14 +110,16 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 1rem;
-            white-space: nowrap; 
+            white-space: nowrap;
             transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         }
+
+        /* --- CORREÇÃO APLICADA AQUI --- */
         .cta-button-header:hover {
             background-color: var(--glow-cyan);
             color: var(--dark-indigo);
-            text-shadow: none;
             box-shadow: 0 0 15px var(--glow-cyan);
+            text-shadow: none; /* Adicionado para remover o brilho herdado do texto */
         }
 
         .hero {
@@ -128,7 +129,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 10%;
+            padding: 0 5%;
         }
 
         .hero h1 {
@@ -225,7 +226,7 @@
             font-size: 1.2rem;
         }
         
-        .timeline { position: relative; max-width: 1400px; margin: 0 auto; }
+        .timeline { position: relative; max-width: 1700px; margin: 0 auto; }
         .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--glow-cyan); top: 0; bottom: 0; left: 50%; margin-left: -3px; box-shadow: 0 0 15px var(--glow-cyan); opacity: 0.3; }
         .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
         .timeline-container.left { left: 0; }
@@ -249,7 +250,7 @@
         .whitepaper-section h2 { font-size: 3rem; text-align: left; margin-bottom: 35px; }
         .whitepaper-section h3 { font-size: 2.4rem; color: var(--glow-cyan); margin-top: 55px; margin-bottom: 30px; border-left: 4px solid var(--glow-cyan); padding-left: 25px; }
         .whitepaper-section h4 { font-size: 1.9rem; color: var(--text-white); margin-top: 45px; margin-bottom: 25px; }
-        .whitepaper-section p, .whitepaper-section li { text-align: left; /* MUDANÇA: Alinhado à esquerda para melhor legibilidade */ line-height: 1.9; margin-bottom: 20px; font-size: 1.2rem; }
+        .whitepaper-section p, .whitepaper-section li { text-align: justify; line-height: 1.9; margin-bottom: 20px; font-size: 1.2rem; }
         .whitepaper-section ul { list-style: none; padding-left: 30px; }
         .whitepaper-section li::before { content: '■'; position: absolute; left: -30px; color: var(--glow-cyan); font-size: 1em; top: 10px; }
         
@@ -269,14 +270,10 @@
         .footer-links a { margin: 0 20px; text-decoration: none; color: var(--text-light); }
         .footer-contact { line-height: 1.8; }
 
-        /* --- AJUSTE 3: Melhorias na Responsividade --- */
         @media (max-width: 768px) {
             body { font-size: 17px; }
             
-            .container { 
-                width: 90%; /* Em mobile, voltamos a 90% para não apertar o conteúdo */
-                padding: 60px 0; 
-            }
+            .container { padding: 60px 0; }
 
             header { padding: 20px 5%; }
             .logo { font-size: 1.8rem; }
@@ -298,6 +295,7 @@
             .timeline-container.right { left: 0%; }
 
             .whitepaper-section { padding: 30px 20px; }
+            .whitepaper-section p, .whitepaper-section li { text-align: left; }
         }
 
     </style>
@@ -414,7 +412,7 @@
             </div>
         </section>
         
-        <article id="whitepaper" class="container">
+        <article id="whitepaper" class="container section">
             <div class="whitepaper-section">
                 <h2>ECOMNIX: Arquitetando a Próxima Geração de Mercados de Carbono</h2>
                 
@@ -499,6 +497,7 @@
                 <p>A ECOMNIX estabelece um novo paradigma para mercados de carbono, superando as limitações atuais por meio de tecnologia de ponta, governança inclusiva e incentivo fiscal. Convidamos governos, legisladores, investidores de impacto, corporações com metas ESG e ONGs a unir forças para escalar essa solução. Juntos, podemos catalisar a regeneração planetária, fomentar economias locais resilientes e assegurar a harmonia entre desenvolvimento humano e integridade ambiental.</p>
             </div>
         </article>
+
     </main>
 
     <footer id="contact">
