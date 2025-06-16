@@ -110,13 +110,16 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 1rem;
-            white-space: nowrap; /* Impede que o texto quebre */
+            white-space: nowrap;
             transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
         }
+
+        /* --- CORREÇÃO APLICADA AQUI --- */
         .cta-button-header:hover {
             background-color: var(--glow-cyan);
             color: var(--dark-indigo);
             box-shadow: 0 0 15px var(--glow-cyan);
+            text-shadow: none; /* Adicionado para remover o brilho herdado do texto */
         }
 
         .hero {
@@ -267,18 +270,16 @@
         .footer-links a { margin: 0 20px; text-decoration: none; color: var(--text-light); }
         .footer-contact { line-height: 1.8; }
 
-        /* --- AJUSTE DE RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 768px) {
             body { font-size: 17px; }
             
             .container { padding: 60px 0; }
 
             header { padding: 20px 5%; }
-            .logo { font-size: 1.8rem; } /* Diminui o logo no mobile */
+            .logo { font-size: 1.8rem; }
 
-            /* Ajustes para o botão do header no mobile */
             .header-nav { gap: 15px; }
-            .header-nav a:not(.cta-button-header) { display: none; } /* Esconde o link "Contato" */
+            .header-nav a:not(.cta-button-header) { display: none; }
             .cta-button-header { 
                 font-size: 0.85rem; 
                 padding: 8px 16px; 
@@ -496,6 +497,7 @@
                 <p>A ECOMNIX estabelece um novo paradigma para mercados de carbono, superando as limitações atuais por meio de tecnologia de ponta, governança inclusiva e incentivo fiscal. Convidamos governos, legisladores, investidores de impacto, corporações com metas ESG e ONGs a unir forças para escalar essa solução. Juntos, podemos catalisar a regeneração planetária, fomentar economias locais resilientes e assegurar a harmonia entre desenvolvimento humano e integridade ambiental.</p>
             </div>
         </article>
+
     </main>
 
     <footer id="contact">
@@ -551,7 +553,7 @@
 
             const geometry = new THREE.BufferGeometry();
             const vertices = [];
-            const sprite = new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/disc.png');
+            const sprite = new THREE.TextureLoader().load('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/textures/sprites/disc.png');
 
             for (let i = 0; i < 7000; i++) {
                 const x = 2000 * Math.random() - 1000;
