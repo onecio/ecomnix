@@ -102,23 +102,48 @@
             color: var(--glow-cyan);
             text-shadow: 0 0 5px var(--glow-cyan);
         }
+        /* Botão "Ler o White Paper" — atualizado para manter o texto visível no hover */
         .cta-button-header {
-            background: transparent;
-            border: 1px solid var(--glow-cyan);
-            color: var(--glow-cyan);
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            white-space: nowrap; 
-            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+          display: inline-block;
+          background: transparent;
+          border: 1px solid var(--glow-cyan);
+          color: var(--glow-cyan);
+          padding: 10px 20px;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 1rem;
+          white-space: nowrap;
+          transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 120ms ease;
+          -webkit-font-smoothing: antialiased;
         }
+
+        /* Hover / focus: muda o fundo e ajusta a cor do texto para manter contraste. */
+        .cta-button-header:hover,
+        .cta-button-header:focus {
+          background-color: #00e6e6;          /* tom de ciano ligeiramente diferente para destaque */
+          color: var(--dark-indigo);          /* texto escuro sobre fundo claro — legível */
+          text-shadow: none;
+          box-shadow: 0 6px 20px rgba(0, 230, 230, 0.22);
+          transform: translateY(-2px);
+          outline: none;
+        }
+
+        /* Foco acessível (teclado) */
+        .cta-button-header:focus {
+          box-shadow: 0 0 0 6px rgba(0, 230, 230, 0.12);
+        }
+
+        /* Garantir que nenhum estilo legado esconda o texto no hover */
+        .header-nav .cta-button-header,
+        .header-nav .cta-button-header * {
+          color: inherit !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+
         .cta-button-header:hover {
-            background-color: var(--glow-cyan);
-            color: var(--dark-indigo);
-            text-shadow: none;
-            box-shadow: 0 0 15px var(--glow-cyan);
+            /* remover regras antigas que poderiam esconder o conteúdo */
         }
 
         .hero {
@@ -226,11 +251,11 @@
         }
         
         .timeline { position: relative; max-width: 1400px; margin: 0 auto; }
-        .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--glow-cyan); top: 0; bottom: 0; left: 50%; margin-left: -3px; box-shadow: 0 0 15px var(--glow-cyan); opacity: 0.3; }
+        .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--glow-cyan); top: 0; bottom: 0; left: 50%; margin-left: -3px; box-shadow: 0 0 15px var(--glow-cyan);[...]
         .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
         .timeline-container.left { left: 0; }
         .timeline-container.right { left: 50%; }
-        .timeline-container::after { content: ''; position: absolute; width: 25px; height: 25px; right: -17px; background-color: var(--dark-indigo); border: 4px solid var(--glow-cyan); top: 15px; border-radius: 50%; z-index: 1; box-shadow: 0 0 15px var(--glow-cyan); }
+        .timeline-container::after { content: ''; position: absolute; width: 25px; height: 25px; right: -17px; background-color: var(--dark-indigo); border: 4px solid var(--glow-cyan); top: 15px;[...]
         .right::after { left: -16px; }
         .timeline-content { padding: 30px 40px; background: var(--glass-bg); position: relative; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); }
         .timeline-content h3 { color: var(--text-white); margin-bottom: 15px; font-size: 1.6rem; }
@@ -309,7 +334,7 @@
     <header id="main-header">
         <a href="#" class="logo">ECOM<span>NIX</span></a>
         <div class="header-nav">
-             <a href="ewp.pdf" target="_blank" class="cta-button-header">Ler o White Paper</a>
+             <a href="ewp.pdf" target="_blank" class="cta-button-header" aria-label="Ler o White Paper">Ler o White Paper</a>
              <a href="#contact">Contato</a>
         </div>
     </header>
@@ -334,27 +359,24 @@
                 </div>
                 <div class="card">
                     <h3>Lentidão e Burocracia</h3>
-                    <p>O ciclo de vida de um projeto, da concepção à monetização, pode levar anos, uma velocidade incompatível com a urgência da crise climática e a agilidade do mercado.</p>
+                    <p>O ciclo de vida de um projeto, da concepção à monetização, pode levar anos, uma velocidade incompatível com a urgência da crise climática e a agilidade do mercado.<[...]
                 </div>
             </div>
         </section>
 
         <section id="solution" class="container section">
              <h2>A Solução: <span>ECOMNIX</span></h2>
-             <p style="text-align:center; max-width: 1000px; margin: -60px auto 70px auto; font-size: 1.4rem;">Nós não somos mais um marketplace. Somos um organismo digital que orquestra a regeneração ambiental em tempo real, funcionando como o nexo que conecta terra, tecnologia, comunidades e ciência, com base em três pilares:</p>
+             <p style="text-align:center; max-width: 1000px; margin: -60px auto 70px auto; font-size: 1.4rem;">Nós não somos mais um marketplace. Somos um organismo digital que orquestra a rege[...]            </p>
             <div class="grid-3">
                  <div class="card">
                     <h3>Automação Radical</h3>
-                    <p>Inteligência Artificial, Gêmeos Digitais e sensoriamento remoto para automatizar a análise, o monitoramento e a verificação (MRV), reduzindo custos e acelerando processos.</p>
-                </div>
+                    <p>Inteligência Artificial, Gêmeos Digitais e sensoriamento remoto para automatizar a análise, o monitoramento e a verificação (MRV), reduzindo custos e acelerando proces[...]                </div>
                 <div class="card">
                     <h3>Transparência Absoluta</h3>
-                    <p>Uso de Blockchain para tokenizar créditos de carbono em NFTs rastreáveis, garantindo um registro imutável, eliminando fraudes e construindo uma economia baseada na confiança.</p>
-                </div>
+                    <p>Uso de Blockchain para tokenizar créditos de carbono em NFTs rastreáveis, garantindo um registro imutável, eliminando fraudes e construindo uma economia baseada na confi[...]                </div>
                 <div class="card">
                     <h3>Soberania Descentralizada</h3>
-                    <p>Uma Organização Autônoma Descentralizada (DAO) que coloca a governança nas mãos da comunidade, garantindo um ecossistema justo, equitativo e que evolui com seus participantes.</p>
-                </div>
+                    <p>Uma Organização Autônoma Descentralizada (DAO) que coloca a governança nas mãos da comunidade, garantindo um ecossistema justo, equitativo e que evolui com seus partic[...]                </div>
             </div>
         </section>
         
@@ -363,16 +385,13 @@
              <div class="grid-3">
                  <div class="card">
                     <h3>Gêmeos Digitais e IoT</h3>
-                    <p>Cada projeto ganha uma réplica virtual dinâmica, alimentada por dados de satélites, drones e sensores, permitindo um monitoramento preciso e em tempo real do sequestro de carbono.</p>
-                </div>
+                    <p>Cada projeto ganha uma réplica virtual dinâmica, alimentada por dados de satélites, drones e sensores, permitindo um monitoramento preciso e em tempo real do sequestro d[...]                </div>
                  <div class="card">
                     <h3>IA Generativa e Agentes</h3>
-                    <p>Um enxame de IAs especializadas automatiza desde a prospecção de áreas e otimização de projetos até a geração de documentação e conexão inteligente com o mercado.</p>
-                </div>
+                    <p>Um enxame de IAs especializadas automatiza desde a prospecção de áreas e otimização de projetos até a geração de documentação e conexão inteligente com o mercado[...]                </div>
                 <div class="card">
                     <h3>Blockchain e Smart Contracts</h3>
-                    <p>Cada tonelada de CO₂ verificada torna-se um NFT rastreável. Contratos inteligentes automatizam pagamentos e acordos, garantindo a execução de regras sem intermediários.</p>
-                </div>
+                    <p>Cada tonelada de CO₂ verificada torna-se um NFT rastreável. Contratos inteligentes automatizam pagamentos e acordos, garantindo a execução de regras sem intermediário[...]                </div>
             </div>
         </section>
         
@@ -409,8 +428,7 @@
         <section id="investors" class="container section">
             <div class="cta-section">
                 <h2>Uma Convocatória para <span>Investidores e Visionários</span></h2>
-                <p>Estamos levantando uma rodada Seed de R$ 5 Milhões para acelerar o desenvolvimento, executar os projetos-piloto e consolidar nossa liderança de mercado. Este é o momento de investir na infraestrutura da próxima economia.</p>
-                <a href="#contact" class="cta-button">Junte-se a Nós</a>
+                <p>Estamos levantando uma rodada Seed de R$ 5 Milhões para acelerar o desenvolvimento, executar os projetos-piloto e consolidar nossa liderança de mercado. Este é o momento de [...]                <a href="#contact" class="cta-button">Junte-se a Nós</a>
             </div>
         </section>
         
@@ -419,49 +437,47 @@
                 <h2>ECOMNIX: Arquitetando a Próxima Geração de Mercados de Carbono</h2>
                 
                 <h3>Resumo Executivo</h3>
-                <p>A emergência climática configura-se como a principal crise de nosso tempo, exigindo soluções disruptivas que transcendam modelos econômicos lineares e hierárquicos. A ECOMNIX propõe-se como uma plataforma digital de próxima geração, que integra Inteligência Artificial (IA) e Blockchain para democratizar, escalar e verificar projetos de carbono com rigor científico e transparência sem precedentes. Ao transformar dados brutos de satélites, sensores IoT e cadastros locais em insights acionáveis e contratos inteligentes, a ECOMNIX habilita a transformação de ativos naturais em créditos de carbono tokenizados, distribuindo valor econômico de forma justa para comunidades rurais, povos tradicionais e investidores globais. Este White Paper detalha a arquitetura técnica, o modelo de negócios, o impacto socioambiental e as implicações do PL 1436/24, posicionando a plataforma como catalisadora de uma economia regenerativa inclusiva.</p>
-                
+                <p>A emergência climática configura-se como a principal crise de nosso tempo, exigindo soluções disruptivas que transcendam modelos econômicos lineares e hierárquicos. A ECO[...]                
                 <div class="pdf-button-wrapper">
                     <a href="ewp.pdf" target="_blank" class="cta-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 10px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoi[...]                
                         Acessar o White Paper Completo (PDF)
                     </a>
                 </div>
 
                 <h3>Capítulo 1: O Imperativo da Ação Climática e a Insuficiência dos Modelos Atuais</h3>
                 <h4>1.1 A Realidade dos Extremos Climáticos</h4>
-                <p>Nos últimos cinco anos, a frequência de ondas de calor no Pantanal aumentou em 40%, enquanto eventos intensos de precipitação avançam a uma taxa de 20% ao ano, segundo dados da USP e do Inpe. Essa volatilidade acelera a erosão do solo, reduz a capacidade de infiltração hídrica e eleva o risco de incêndios florestais em até 60% durante a estação seca. A perda anual de biodiversidade, estimada em 1,2 milhão de hectares, impacta diretamente a fonte de subsistência de milhões de famílias rurais, gerando migração interna e pressionando zonas urbanas.</p>
+                <p>Nos últimos cinco anos, a frequência de ondas de calor no Pantanal aumentou em 40%, enquanto eventos intensos de precipitação avançam a uma taxa de 20% ao ano, segundo dad[...]                
                 <h4>1.2 As Barreiras do Mercado de Carbono Tradicional</h4>
                 <p>Apesar de movimentar US$2 bilhões anuais globalmente (Voluntary Carbon Market Insights, 2024), o mercado de carbono enfrenta três grandes deficiências:</p>
                 <ul>
                     <li><strong>Transparência e Auditoria:</strong> relatórios manualmente compilados e auditorias anuais permitem fraudes e dupla contagem, comprometendo a credibilidade.</li>
                     <li><strong>Custos de Transação:</strong> certificação Verra ou Gold Standard ultrapassa US$50.000 por projeto, inviabilizando iniciativas de menor porte.</li>
-                    <li><strong>Inclusão:</strong> 85% dos recursos fluem para grandes projetos florestais, excluindo agricultores familiares e cooperativas, que carecem de capital e acesso a expertise técnica.</li>
-                </ul>
-                <p>Esses gargalos reduzem o impacto real das iniciativas de carbono e limitam a dispersão de benefícios para as comunidades diretamente responsáveis pela conservação e restauração.</p>
+                    <li><strong>Inclusão:</strong> 85% dos recursos fluem para grandes projetos florestais, excluindo agricultores familiares e cooperativas, que carecem de capital e acesso a ex[...]                </ul>
+                <p>Esses gargalos reduzem o impacto real das iniciativas de carbono e limitam a dispersão de benefícios para as comunidades diretamente responsáveis pela conservação e restau[...]                
                 <h3>Capítulo 2: A Visão ECOMNIX – Um Ecossistema Regenerativo e Democrático</h3>
                 <h4>2.1 Princípios Fundamentais</h4>
                 <ul>
-                    <li><strong>Governança Distribuída:</strong> uso de uma DAO (baseada em Aragon e Snapshot) que garante representação proporcional: 30% para comunidades locais (indígenas, quilombolas), 30% para pequenos produtores, 20% para ONGs ambientais e 20% para investidores.</li>
-                    <li><strong>Economia Circular de Carbono:</strong> cada fluxo de resíduos orgânicos, biomassa e práticas agroflorestais integra-se em cadeias de valor regenerativas, de modo a minimizar desperdícios e maximizar o sequestro.</li>
-                    <li><strong>Padrão Ouro de Transparência:</strong> toda métrica de desempenho (NDVI, LAI, biomassa) é indexada e assinada por oráculos Chainlink, validada em blockchain e disponibilizada em dashboards públicos.</li>
+                    <li><strong>Governança Distribuída:</strong> uso de uma DAO (baseada em Aragon e Snapshot) que garante representação proporcional: 30% para comunidades locais (indígenas,[...]                
+                    <li><strong>Economia Circular de Carbono:</strong> cada fluxo de resíduos orgânicos, biomassa e práticas agroflorestais integra-se em cadeias de valor regenerativas, de mod[...]                
+                    <li><strong>Padrão Ouro de Transparência:</strong> toda métrica de desempenho (NDVI, LAI, biomassa) é indexada e assinada por oráculos Chainlink, validada em blockchain e[...]                
                 </ul>
                 <h4>2.2 Redefinindo Valor</h4>
-                <p>A ECOMNIX converte serviços ecossistêmicos—sequestro de CO₂, regulação hídrica, habitat para fauna—em ativos financeiros. Por meio de tokenização ERC-20 e NFTs de passaporte digital, é possível negociar parcelas de projetos, pulverizando o risco e atraindo capital de impacto de forma segura e escalável.</p>
+                <p>A ECOMNIX converte serviços ecossistêmicos—sequestro de CO₂, regulação hídrica, habitat para fauna—em ativos financeiros. Por meio de tokenização ERC-20 e NFTs de[...]                
                 <h3>Capítulo 3: A Arquitetura da Solução – A Plataforma ECOMNIX</h3>
                 <h4>3.1 O Núcleo de Inteligência Artificial (IA)</h4>
                 <ul>
-                    <li><strong>Ingestão e Pré-processamento de Dados:</strong> pipelines em Apache Kafka consomem streams de satélite Sentinel-2 e Planet, integrados com APIs do Inpe e cadastros rurais do Sigef. Dados são normalizados em um data lake no Amazon S3.</li>
-                    <li><strong>Modelos de Mapeamento Preditivo:</strong> redes neurais convolucionais (CNN) customizadas identificam cobertura vegetal e estimam biomassa acima e abaixo do solo, calibradas por amostras em campo via drones DJI Mavic.</li>
-                    <li><strong>Matchmaking de Projetos:</strong> algoritmos de otimização multiobjetivo (NSGA-II) combinam resíduos agrícolas com potenciais de produção de biogás e hidrogênio verde.</li>
-                    <li><strong>Interface de Prospecção:</strong> módulos de CRM integrado (Salesforce) disparam propostas automáticas via WhatsApp Business API com contratos inteligentes prontos.</li>
+                    <li><strong>Ingestão e Pré-processamento de Dados:</strong> pipelines em Apache Kafka consomem streams de satélite Sentinel-2 e Planet, integrados com APIs do Inpe e cadast[...]                
+                    <li><strong>Modelos de Mapeamento Preditivo:</strong> redes neurais convolucionais (CNN) customizadas identificam cobertura vegetal e estimam biomassa acima e abaixo do solo, [...]                
+                    <li><strong>Matchmaking de Projetos:</strong> algoritmos de otimização multiobjetivo (NSGA-II) combinam resíduos agrícolas com potenciais de produção de biogás e hidrog[...]                
+                    <li><strong>Interface de Prospecção:</strong> módulos de CRM integrado (Salesforce) disparam propostas automáticas via WhatsApp Business API com contratos inteligentes pro[...]                
                 </ul>
                 <h4>3.2 A Camada de Confiança (Blockchain)</h4>
                 <ul>
                     <li><strong>Ledger Descentralizado:</strong> baseado em Hyperledger Fabric para rede permissionada e Ethereum L2 (Polygon) para tokenização pública.</li>
                     <li><strong>Smart Contracts:</strong> desenvolvidos em Solidity, auditados por Certik, automatizam emissões e pagamentos.</li>
                     <li><strong>Oráculos e Telemetria:</strong> Chainlink opera feeds de dados de sensores IoT (LoRaWAN) e modelos climáticos NOAA para verificações periódicas.</li>
-                    <li><strong>Passaporte Digital de Carbono:</strong> NFT padrão ERC-721 armazena metadados completos (geotags, metodologias, histórico), proporcionando rastreabilidade total.</li>
+                    <li><strong>Passaporte Digital de Carbono:</strong> NFT padrão ERC-721 armazena metadados completos (geotags, metodologias, histórico), proporcionando rastreabilidade total.[...]                
                 </ul>
                 <h3>Capítulo 4: Casos de Uso e Aplicações Práticas</h3>
                 <h4>4.1 Tipos de Projetos de Carbono Possíveis e Elegíveis</h4>
@@ -494,9 +510,9 @@
                     <li><strong>Financiamento por Impacto:</strong> Emissão de Green Bonds tokenizados.</li>
                 </ul>
                 <h4>5.2 A Alavanca do Projeto de Lei 1436/24</h4>
-                <p>O PL 1436/24 propõe abatimento de até 50% do IRPJ/CSLL na agropecuária para créditos de carbono certificados. Estima-se que essa desoneração poderá ativar R$6 bilhões em compras internas no primeiro ano. A ECOMNIX, com sua camada de compliance fiscal integrada, está pronta para emitir os certificados e relatórios necessários.</p>
+                <p>O PL 1436/24 propõe abatimento de até 50% do IRPJ/CSLL na agropecuária para créditos de carbono certificados. Estima-se que essa desoneração poderá ativar R$6 bilhões e[...]                
                 <h3>Capítulo 6: Conclusão e O Caminho a Seguir</h3>
-                <p>A ECOMNIX estabelece um novo paradigma para mercados de carbono, superando as limitações atuais por meio de tecnologia de ponta, governança inclusiva e incentivo fiscal. Convidamos governos, legisladores, investidores de impacto, corporações com metas ESG e ONGs a unir forças para escalar essa solução. Juntos, podemos catalisar a regeneração planetária, fomentar economias locais resilientes e assegurar a harmonia entre desenvolvimento humano e integridade ambiental.</p>
+                <p>A ECOMNIX estabelece um novo paradigma para mercados de carbono, superando as limitações atuais por meio de tecnologia de ponta, governança inclusiva e incentivo fiscal. Con[...]                
             </div>
         </article>
     </main>
