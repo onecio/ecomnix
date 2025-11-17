@@ -1,179 +1,453 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ECOMNIX — Plataforma regenerativa para mercados de carbono | White Paper</title>
-  <meta name="description" content="ECOMNIX é um ecossistema de inteligência regenerativa que tokeniza serviços ecossistêmicos, conectando produtores, investidores e comunidades para mercados de carbono transparentes e inclusivos.">
-  <meta name="keywords" content="ecomnix, mercados de carbono, regenerativo, tokenização, NFT, DAO, sustentabilidade, reforestamento, agricultura regenerativa">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ecomnix.eco/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOMNIX | Arquitetando a Próxima Geração de Mercados de Carbono</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap');
 
-  <!-- Open Graph -->
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="ECOMNIX — Plataforma regenerativa para mercados de carbono">
-  <meta property="og:description" content="ECOMNIX tokeniza serviços ecossistêmicos e conecta comunidades ao mercado de carbono com transparência e governança descentralizada.">
-  <meta property="og:url" content="https://ecomnix.eco/">
-  <meta property="og:site_name" content="ECOMNIX">
-  <meta property="og:image" content="https://ecomnix.eco/ewp-cover.png">
+        :root {
+            --dark-indigo: #0D1B2A;
+            --dark-green: #0C221A;
+            --glow-cyan: #00FFFF;
+            --text-light: #F0F2F5; 
+            --text-white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.07); 
+        }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ECOMNIX — Plataforma regenerativa para mercados de carbono">
-  <meta name="twitter:description" content="Tokenizando valor da natureza: transparência, inclusão e tecnologia para mercados de carbono.">
-  <meta name="twitter:image" content="https://ecomnix.eco/ewp-cover.png">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"ECOMNIX","url":"https://ecomnix.eco/","logo":"https://ecomnix.eco/logo.png","sameAs":["https://twitter.com/ecomnix","https://www.linkedin.com/company/ecomnix"],"contactPoint":[{"@type":"ContactPoint","email":"contato@ecomnix.eco","contactType":"Customer Service","areaServed":"BR","availableLanguage":["Portuguese","English"]}]}
-  </script>
+        html {
+            scroll-behavior: smooth;
+        }
 
-  <style>
-    :root{--dark-indigo:#0D1B2A;--dark-green:#0C221A;--glow-cyan:#00FFFF;--text-light:#F0F2F5;--white:#ffffff}
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Inter, Sora, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--dark-indigo);color:var(--text-light);line-height:1.5;font-size:18px;-webkit-font-smoothing:antialiased}
-    .wrap{min-height:100vh;display:flex;flex-direction:column}
-    .container{width:90%;max-width:1200px;margin:0 auto;padding:90px 0}
-    header{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;z-index:120;background:linear-gradient(180deg, rgba(13,27,42,0.9), rgba(13,27,42,0));backdrop-filter:blur(2px)}
-    header.scrolled{background-color:rgba(13,27,42,0.98);backdrop-filter:blur(6px)}
-    .header-inner{width:100%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{font-weight:800;font-size:1.25rem;color:var(--white);text-decoration:none}
-    .logo span{color:var(--glow-cyan)}
-    nav{display:flex;align-items:center;gap:14px}
-    nav a{color:var(--text-light);text-decoration:none;font-weight:600}
-    .cta-button-header{display:inline-block;background:transparent;border:1px solid var(--glow-cyan);color:var(--glow-cyan);padding:.45rem .9rem;border-radius:999px;font-weight:700;transition:all .18s ease;text-decoration:none}
-    .cta-button-header:hover,.cta-button-header:focus{background:#00e6e6;color:var(--dark-indigo);box-shadow:0 8px 22px rgba(0,230,230,.18);transform:translateY(-2px);outline:none}
+        body {
+            font-family: 'Sora', sans-serif;
+            background-color: var(--dark-indigo);
+            color: var(--text-light);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 22px; 
+        }
+        
+        #hero-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 
-    main{flex:1}
-    .hero{padding:120px 0 60px;text-align:center}
-    .hero-inner{max-width:980px;margin:0 auto}
-    h1{font-size:2rem;line-height:1.05;margin-bottom:.6rem;color:var(--white)}
-    p.lead{font-size:1.05rem;color:rgba(240,242,245,.95);margin-bottom:1rem}
-    .cta-button{display:inline-block;background:var(--glow-cyan);color:var(--dark-indigo);padding:.8rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:800;box-shadow:0 10px 30px rgba(0,255,255,.10)}
+        /* --- AJUSTE 2: Aumento das margens laterais --- */
+        .container {
+            width: 80%; /* Reduzido para aumentar as margens laterais */
+            max-width: 1400px; /* Reduzido para melhor legibilidade */
+            margin: 0 auto;
+            padding: 90px 0;
+            position: relative;
+            z-index: 2;
+        }
 
-    .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.25rem}
-    .card{background:rgba(255,255,255,.03);padding:1.1rem;border-radius:10px;border:1px solid rgba(255,255,255,.04)}
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 25px 10%; /* Ajustado para alinhar com o novo container */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(180deg, rgba(13, 27, 42, 0.8) 0%, rgba(13, 27, 42, 0) 100%);
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(12px);
+        }
 
-    .whitepaper-section{padding:1.2rem;border-radius:10px;background:rgba(255,255,255,.02);margin-top:1rem}
-    footer{padding:2.5rem 0;color:rgba(240,242,245,.85);border-top:1px solid rgba(255,255,255,.04);text-align:center}
+        .logo {
+            font-size: 2.2rem; 
+            font-weight: 800;
+            color: var(--text-white);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--glow-cyan);
+            text-shadow: 0 0 15px var(--glow-cyan);
+        }
 
-    .social{display:flex;gap:.6rem;justify-content:center;margin-top:.6rem}
-    .social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,.04);color:var(--text-light);text-decoration:none}
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .header-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+        .header-nav a:hover {
+            color: var(--glow-cyan);
+            text-shadow: 0 0 5px var(--glow-cyan);
+        }
+        .cta-button-header {
+            background: transparent;
+            border: 1px solid var(--glow-cyan);
+            color: var(--glow-cyan);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            white-space: nowrap; 
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button-header:hover {
+            background-color: var(--glow-cyan);
+            color: var(--dark-indigo);
+            text-shadow: none;
+            box-shadow: 0 0 15px var(--glow-cyan);
+        }
 
-    @media (max-width:768px){.container{padding:70px 0}.hero{padding:100px 0 40px}h1{font-size:1.5rem}.header-inner nav a:not(.cta-button-header){display:none}}
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
 
-    /* Accessibility helper */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-  </style>
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 800;
+            color: var(--text-white);
+            line-height: 1.05;
+            margin-bottom: 30px;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+            max-width: 1200px;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            max-width: 950px; 
+            margin-bottom: 50px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            background: var(--glow-cyan);
+            color: var(--dark-indigo);
+            padding: 22px 55px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+            border: 2px solid transparent;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 1);
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 70px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+        
+        h2 span {
+            color: var(--glow-cyan);
+            text-shadow: 0 0 15px var(--glow-cyan);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+        
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 45px;
+            backdrop-filter: blur(12px);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 255, 255, 0.3);
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            color: var(--glow-cyan);
+            margin-bottom: 20px;
+        }
+
+        .card p, .card li {
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+        
+        .timeline { position: relative; max-width: 1400px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--glow-cyan); top: 0; bottom: 0; left: 50%; margin-left: -3px; box-shadow: 0 0 15px var(--glow-cyan);[...] 
+        .timeline-container { padding: 10px 40px; position: relative; background-color: inherit; width: 50%; }
+        .timeline-container.left { left: 0; }
+        .timeline-container.right { left: 50%; }
+        .timeline-container::after { content: ''; position: absolute; width: 25px; height: 25px; right: -17px; background-color: var(--dark-indigo); border: 4px solid var(--glow-cyan); top: 15px;[...] 
+        .right::after { left: -16px; }
+        .timeline-content { padding: 30px 40px; background: var(--glass-bg); position: relative; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .timeline-content h3 { color: var(--text-white); margin-bottom: 15px; font-size: 1.6rem; }
+        .cta-section { text-align: center; background: linear-gradient(180deg, var(--dark-indigo) 0%, var(--dark-green) 100%); border-radius: 20px; padding: 90px 40px; }
+        .cta-section h2 { margin-bottom: 25px; }
+        .cta-section p { margin-bottom: 50px; font-size: 1.6rem; }
+
+        .whitepaper-section {
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 70px;
+            backdrop-filter: blur(12px);
+        }
+
+        .whitepaper-section h2 { font-size: 3rem; text-align: left; margin-bottom: 35px; }
+        .whitepaper-section h3 { font-size: 2.4rem; color: var(--glow-cyan); margin-top: 55px; margin-bottom: 30px; border-left: 4px solid var(--glow-cyan); padding-left: 25px; }
+        .whitepaper-section h4 { font-size: 1.9rem; color: var(--text-white); margin-top: 45px; margin-bottom: 25px; }
+        .whitepaper-section p, .whitepaper-section li { text-align: left; /* MUDANÇA: Alinhado à esquerda para melhor legibilidade */ line-height: 1.9; margin-bottom: 20px; font-size: 1.2rem; }
+        .whitepaper-section ul { list-style: none; padding-left: 30px; }
+        .whitepaper-section li::before { content: '■'; position: absolute; left: -30px; color: var(--glow-cyan); font-size: 1em; top: 10px; }
+        
+        .pdf-button-wrapper {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer .logo { margin-bottom: 25px; display: inline-block; }
+        .footer-links { margin-bottom: 25px; }
+        .footer-links a { margin: 0 20px; text-decoration: none; color: var(--text-light); }
+        .footer-contact { line-height: 1.8; }
+
+        /* --- AJUSTE 3: Melhorias na Responsividade --- */
+        @media (max-width: 768px) {
+            body { font-size: 17px; }
+            
+            .container { 
+                width: 90%; /* Em mobile, voltamos a 90% para não apertar o conteúdo */
+                padding: 60px 0; 
+            }
+
+            header { padding: 20px 5%; }
+            .logo { font-size: 1.8rem; }
+
+            .header-nav { gap: 15px; }
+            .header-nav a:not(.cta-button-header) { display: none; }
+            .cta-button-header { 
+                font-size: 0.85rem; 
+                padding: 8px 16px; 
+            }
+
+            .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            .hero p { font-size: 1.1rem; }
+            h2 { font-size: 2.2rem; margin-bottom: 50px; }
+            
+            .timeline::after { left: 31px; }
+            .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-container.left::after, .timeline-container.right::after { left: 15px; }
+            .timeline-container.right { left: 0%; }
+
+            .whitepaper-section { padding: 30px 20px; }
+        }
+
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <canvas id="hero-canvas" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1"></canvas>
+
+    <canvas id="hero-canvas"></canvas>
 
     <header id="main-header">
-      <div class="header-inner">
-        <a class="logo" href="/">ECOM<span>NIX</span></a>
-        <nav aria-label="Navegação principal">
-          <a class="cta-button-header" href="/ewp.pdf" target="_blank" rel="noopener noreferrer">Ler o White Paper</a>
-          <a href="#solution">A Solução</a>
-          <a href="#whitepaper">White Paper</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#contact">Contato</a>
-        </nav>
-      </div>
+        <a href="#" class="logo">ECOM<span>NIX</span></a>
+        <div class="header-nav">
+             <a href="ewp.pdf" target="_blank" class="cta-button-header">Ler o White Paper</a>
+             <a href="#contact">Contato</a>
+        </div>
     </header>
 
     <main>
-      <section class="hero container" aria-labelledby="hero-title">
-        <div class="hero-inner">
-          <h1 id="hero-title">ECOMNIX — Arquitetando mercados de carbono regenerativos e inclusivos</h1>
-          <p class="lead">Plataforma que converte serviços ecossistêmicos em ativos digitais, com verificação automatizada (MRV), tokenização e governança descentralizada.</p>
-          <p><a class="cta-button" href="#whitepaper">Baixe o White Paper</a></p>
+        <section class="hero">
+            <h1>A Natureza Entra na Rede.</h1>
+            <p>ECOMNIX é o ecossistema de inteligência regenerativa que traduz o valor da Terra em ativos digitais, conectando a economia climática ao futuro da preservação.</p>
+            <a href="#problem" class="cta-button">Descubra a Simbiose</a>
+        </section>
 
-          <div class="grid-3" aria-hidden="false">
-            <article class="card" aria-labelledby="card1-title">
-              <h2 id="card1-title">Transparência</h2>
-              <p>Registro imutável e rastreável para créditos de carbono, reduzindo fraudes.</p>
-            </article>
-            <article class="card" aria-labelledby="card2-title">
-              <h2 id="card2-title">Inclusão</h2>
-              <p>Custos reduzidos e processos acessíveis para pequenos produtores.</p>
-            </article>
-            <article class="card" aria-labelledby="card3-title">
-              <h2 id="card3-title">Escalabilidade</h2>
-              <p>Monitoramento automático por satélite, sensores e IA para MRV eficiente.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+        <section id="problem" class="container section">
+            <h2>O Paradigma Quebrado: <span>Um Mercado Travado</span></h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Opacidade e Custos</h3>
+                    <p>Processos complexos e custos de certificação proibitivos marginalizam pequenos produtores e criam barreiras que impedem o fluxo de capital para quem mais precisa.</p>
+                </div>
+                <div class="card">
+                    <h3>Vulnerabilidade e Risco</h3>
+                    <p>A falta de um registro imutável abre brechas para fraudes e dupla contagem, erodindo a confiança e expondo investidores e empresas a riscos reputacionais e financeiros.</p>
+                </div>
+                <div class="card">
+                    <h3>Lentidão e Burocracia</h3>
+                    <p>O ciclo de vida de um projeto, da concepção à monetização, pode levar anos, uma velocidade incompatível com a urgência da crise climática e a agilidade do mercado.</p>
+                </div>
+            </div>
+        </section>
 
-      <section id="problem" class="container" aria-labelledby="problem-title">
-        <h2 id="problem-title">O problema</h2>
-        <p>Mercados de carbono atuais sofrem com custos altos, burocracia e falta de transparência. ECOMNIX reduz essas barreiras com tecnologia e governança.</p>
-      </section>
+        <section id="solution" class="container section">
+             <h2>A Solução: <span>ECOMNIX</span></h2>
+             <p style="text-align:center; max-width: 1000px; margin: -60px auto 70px auto; font-size: 1.4rem;">Nós não somos mais um marketplace. Somos um organismo digital que orquestra a rege[...]    
+            <div class="grid-3">
+                 <div class="card">
+                    <h3>Automação Radical</h3>
+                    <p>Inteligência Artificial, Gêmeos Digitais e sensoriamento remoto para automatizar a análise, o monitoramento e a verificação (MRV), reduzindo custos e acelerando proces[...]  
+                </div>
+                <div class="card">
+                    <h3>Transparência Absoluta</h3>
+                    <p>Uso de Blockchain para tokenizar créditos de carbono em NFTs rastreáveis, garantindo um registro imutável, eliminando fraudes e construindo uma economia baseada na confi[...]        
+                </div>
+                <div class="card">
+                    <h3>Soberania Descentralizada</h3>
+                    <p>Uma Organização Autônoma Descentralizada (DAO) que coloca a governança nas mãos da comunidade, garantindo um ecossistema justo, equitativo e que evolui com seus partic[...] 
+                </div>
+            </div>
+        </section>
+        
+        <section id="tech" class="container section">
+            <h2>Nossa <span>Arquitetura Tecnológica</span></h2>
+             <div class="grid-3">
+                  <div class="card">
+                     <h3>Gêmeos Digitais e IoT</h3>
+                     <p>Cada projeto ganha uma réplica virtual dinâmica, alimentada por dados de satélites, drones e sensores, permitindo um monitoramento preciso e em tempo real do sequestro d[...]       
+                 </div>
+                  <div class="card">
+                     <h3>IA Generativa e Agentes</h3>
+                     <p>Um enxame de IAs especializadas automatiza desde a prospecção de áreas e otimização de projetos até a geração de documentação e conexão inteligente com o mercado[...] 
+                 </div>
+                 <div class="card">
+                     <h3>Blockchain e Smart Contracts</h3>
+                     <p>Cada tonelada de CO₂ verificada torna-se um NFT rastreável. Contratos inteligentes automatizam pagamentos e acordos, garantindo a execução de regras sem intermediário[...] 
+                 </div>
+             </div>
+         </section>
+         
+         <section id="roadmap" class="container section">
+             <h2>Nosso <span>Roadmap</span></h2>
+             <div class="timeline">
+                 <div class="timeline-container left section">
+                     <div class="timeline-content">
+                         <h3>Fase 1 (Q4 2025 - Q2 2026)</h3>
+                         <p>Prova de Conceito e Parcerias-Semente. Desenvolvimento do MVP e formalização das primeiras alianças com Universidades.</p>
+                     </div>
+                 </div>
+                 <div class="timeline-container right section">
+                     <div class="timeline-content">
+                         <h3>Fase 2 (Q3 2026 - Q2 2027)</h3>
+                         <p>Lançamento de Projetos-Piloto em diferentes biomas. Primeiro edital de fomento à pesquisa via Tesouro da DAO.</p>
+                     </div>
+                 </div>
+                 <div class="timeline-container left section">
+                     <div class="timeline-content">
+                         <h3>Fase 3 (Q3 2027 - 2028)</h3>
+                         <p>Lançamento da DAO e expansão nacional. Transferência total da governança para a comunidade.</p>
+                     </div>
+                 </div>
+                 <div class="timeline-container right section">
+                     <div class="timeline-content">
+                         <h3>Fase 4 (2029+)</h3>
+                         <p>Interoperabilidade Global e Liderança Científica. Consolidação da ECOMNIX como padrão mundial para as Finanças Regenerativas (ReFi).</p>
+                     </div>
+                 </div>
+             </div>
+         </section>
+         
+         <section id="investors" class="container section">
+             <div class="cta-section">
+                 <h2>Uma Convocatória para <span>Investidores e Visionários</span></h2>
+                 <p>Estamos levantando uma rodada Seed de R$ 5 Milhões para acelerar o desenvolvimento, executar os projetos-piloto e consolidar nossa liderança de mercado. Este é o momento de [...]   
+             </div>
+         </section>
+         
+         <article id="whitepaper" class="container">
+             <div class="whitepaper-section">
+                 <h2>ECOMNIX: Arquitetando a Próxima Geração de Mercados de Carbono</h2>
+                 
+                 <h3>Resumo Executivo</h3>
+                 <p>A emergência climática configura-se como a principal crise de nosso tempo, exigindo soluções disruptivas que transcendam modelos econômicos lineares e hierárquicos. A ECO[...]  
+                 
+                 <div class="pdf-button-wrapper">
+                     <a href="ewp.pdf" target="_blank" class="cta-button">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                         Acessar o White Paper Completo (PDF)
+                     </a>
+                 </div>
 
-      <section id="solution" class="container" aria-labelledby="solution-title">
-        <h2 id="solution-title">Nossa solução</h2>
-        <h3>Como funciona</h3>
-        <p>Tokenização, contratos inteligentes e um protocolo de verificação que conecta comunidades, investidores e marketplaces de forma segura e auditável.</p>
-      </section>
-
-      <section id="whitepaper" class="container whitepaper-section" aria-labelledby="whitepaper-title">
-        <h2 id="whitepaper-title">White Paper — ECOMNIX</h2>
-        <p>Resumo executivo disponível; baixe o documento completo para metodologia, roadmap e políticas de governança.</p>
-        <p style="text-align:center;margin-top:1rem"><a class="cta-button" href="/ewp.pdf" target="_blank" rel="noopener noreferrer">Acessar o White Paper (PDF)</a></p>
-      </section>
-
-      <section id="tech" class="container" aria-labelledby="tech-title">
-        <h2 id="tech-title">Arquitetura tecnológica</h2>
-        <h3>IA, IoT e Blockchain</h3>
-        <p>Descrição breve de componentes técnicos e benefícios operacionais para projetos de carbono.</p>
-      </section>
-
-      <section id="roadmap" class="container" aria-labelledby="roadmap-title">
-        <h2 id="roadmap-title">Roadmap</h2>
-        <p>Fases planejadas: POC, pilotos, lançamento da DAO e expansão internacional.</p>
-      </section>
-    </main>
-
-    <footer id="contact" role="contentinfo">
-      <div class="container">
-        <a class="logo" href="/" aria-label="ECOMNIX home">ECOM<span>NIX</span></a>
-        <nav aria-label="Links rápidos" style="margin-top:.6rem">
-          <a href="#solution">A Solução</a> · <a href="#whitepaper">White Paper</a> · <a href="#roadmap">Roadmap</a>
-        </nav>
-
-        <div class="social" aria-hidden="false" style="margin-top:.6rem">
-          <a href="https://twitter.com/ecomnix" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 5.92c-.64.28-1.33.48-2.05.56.74-.44 1.3-1.14 1.56-1.97-.7.42-1.48.73-2.31.9C18.6 4.5 17.39 4 16.09 4c-2.22 0-4.01 1.86-4.01 4.15 0 .33.03.65.11.96-3.34-.17-6.3-1.85-8.28-4.4-.35.6-.55 1.3-.55 2.05 0 1.44.71 2.71 1.79 3.46-.66-.02-1.29-.2-1.84-.5v.05c0 2.01 1.44 3.69 3.36 4.07-.35.1-.72.15-1.11.15-.27 0-.54-.02-.8-.08.54 1.66 2.06 2.87 3.87 2.9-1.42 1.11-3.21 1.77-5.16 1.77-.33 0-.66-.02-.98-.06 1.84 1.3 4.02 2.05 6.37 2.05 7.64 0 11.82-6.54 11.82-12.21l-.01-.56c.82-.6 1.52-1.36 2.08-2.22-.74.33-1.53.55-2.36.65z" fill="currentColor"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/company/ecomnix" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.98 3.5C4.98 4.6 4.12 5.5 2.98 5.5S1 4.6 1 3.5 1.86 1.5 2.98 1.5 4.98 2.4 4.98 3.5zM1.3 8.31h3.36V23H1.3V8.31zM9.7 8.31h3.22v1.99h.05c.45-.85 1.56-1.75 3.2-1.75 3.42 0 4.05 2.25 4.05 5.17V23h-3.36v-7.2c0-1.72 0-3.94-2.4-3.94-2.41 0-2.78 1.88-2.78 3.82V23H9.7V8.31z" fill="currentColor"/></svg>
-          </a>
-        </div>
-
-        <p style="margin-top:1rem">Para parcerias e informações: <a href="mailto:contato@ecomnix.eco" style="color:var(--glow-cyan)">contato@ecomnix.eco</a></p>
-        <p style="margin-top:.6rem;opacity:.7;font-size:.9rem">&copy; 2025 ECOMNIX. Todos os direitos reservados.</p>
-      </div>
-    </footer>
-  </div>
-
-  <script>
-    // Header scroll effect
-    const header = document.getElementById('main-header');
-    window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
-
-    // Intersection observer for simple fade-in
-    const els = document.querySelectorAll('main section, main article');
-    const obs = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity=1;e.target.style.transform='none';obs.unobserve(e.target);}});},{threshold:0.12});
-    els.forEach(e=>{e.style.opacity=0;e.style.transform='translateY(20px)';obs.observe(e);});
-
-    // Lazy-load three.js for canvas effect (non-blocking)
-    (function(){
-      const s = document.createElement('script'); s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'; s.async=true; s.onload=function(){ try{ const canvas=document.getElementById('hero-canvas'); const scene=new THREE.Scene(); const camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,1,10000); camera.position.z=800; const geometry=new THREE.BufferGeometry(); const vertices=new Float32Array(2000*3); for(let i=0;i<vertices.length;i++) vertices[i]=(Math.random()-0.5)*2000; geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices,3)); const sprite=new THREE.TextureLoader().load('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/textures/sprites/disc.png'); const material=new THREE.PointsMaterial({size:6,map:sprite,blending:THREE.AdditiveBlending,depthTest:false,transparent:true}); material.color.setHSL(0.5,0.7,0.5); const particles=new THREE.Points(geometry,material); scene.add(particles); const renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true}); renderer.setPixelRatio(window.devicePixelRatio); renderer.setSize(window.innerWidth,window.innerHeight); window.addEventListener('resize',()=>{camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight);}); (function anim(){requestAnimationFrame(anim);particles.rotation.x+=0.00005;particles.rotation.y+=0.0001;renderer.render(scene,camera);})(); }catch(e){console.warn('three.js init failed',e);} }; document.body.appendChild(s);
-    })();
-  </script>
-</body>
-</html>
+                 <h3>Capítulo 1: O Imperativo da Ação Climática e a Insuficiência dos Modelos Atuais</h3>
+                 <h4>1.1 A Realidade dos Extremos Climáticos</h4>
+                 <p>Nos últimos cinco anos, a frequência de ondas de calor no Pantanal aumentou em 40%, enquanto eventos intensos de precipitação avançam a uma taxa de 20% ao ano, segundo dados meteorológicos e análises regionais.[...]
+                 <h4>1.2 As Barreiras do Mercado de Carbono Tradicional</h4>
+                 <p>Apesar de movimentar US$2 bilhões anuais globalmente (Voluntary Carbon Market Insights, 2024), o mercado de carbono enfrenta três grandes deficiências:</p>
+                 <ul>
+                     <li><strong>Transparência e Auditoria:</strong> relatórios manualmente compilados e auditorias anuais permitem fraudes e dupla contagem, comprometendo a credibilidade.</li>
+                     <li><strong>Custos de Transação:</strong> certificação Verra ou Gold Standard ultrapassa US$50.000 por projeto, inviabilizando iniciativas de menor porte.</li>
+                     <li><strong>Inclusão:</strong> 85% dos recursos fluem para grandes projetos florestais, excluindo agricultores familiares e cooperativas, que carecem de capital e acesso a mercados.</li>
+                 </ul>
+                 <p>Esses gargalos reduzem o impacto real das iniciativas de carbono e limitam a dispersão de benefícios para as comunidades diretamente responsáveis pela conservação e restauração ambiental.</p>
+                 <h3>Capítulo 2: A Visão ECOMNIX – Um Ecossistema Regenerativo e Democrático</h3>
+                 <h4>2.1 Princípios Fundamentais</h4>
+                 <ul>
+                     <li><strong>Governança Distribuída:</strong> uso de uma DAO (baseada em Aragon e Snapshot) que garante representação proporcional: 30% para comunidades locais (indígenas, tradicionais), 40% para pesquisadores e 30% para investidores institucionais.</li>
+                     <li><strong>Economia Circular de Carbono:</strong> cada fluxo de resíduos orgânicos, biomassa e práticas agroflorestais integra-se em cadeias de valor regenerativas, de modo que resíduos se tornam insumos para produção de energia renovável e recuperação de solos.</li>
+                     <li><strong>Padrão Ouro de Transparência:</strong> toda métrica de desempenho (NDVI, LAI, biomassa) é indexada e assinada por oráculos Chainlink, validada em blockchain e disponibilizada para auditorias independentes.</li>
+                 </ul>
+                 <h4>2.2 Redefinindo Valor</h4>
+                 <p>A ECOMNIX converte serviços ecossistêmicos—sequestro de CO₂, regulação hídrica, habitat para fauna—em ativos financeiros. Por meio de tokenização ERC-20 e NFTs de representação, cada serviço pode ser monetizado e negociado em mercados secundários, com garantias de rastreabilidade e royalties para comunidades locais.</p>
+                 <h3>Capítulo 3: A Arquitetura da Solução – A Plataforma ECOMNIX</h3>
+                 <h4>3.1 O Núcleo de Inteligência Artificial (IA)</h4>
+                 <ul>
+                     <li><strong>Ingestão e Pré-processamento de Dados:</strong> pipelines em Apache Kafka consomem streams de satélite Sentinel-2 e Planet, integrados com APIs do Inpe e cadastr[...]
