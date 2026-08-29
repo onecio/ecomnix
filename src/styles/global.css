@@ -487,3 +487,77 @@ select {
 
 /* ---------- Reveal ---------- */
 .reveal { animation: none; }
+
+/* ---------- Capítulos (details/summary) ---------- */
+.chapter {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  margin-bottom: var(--space-sm);
+  box-shadow: var(--shadow-sm);
+}
+.chapter summary {
+  display: flex;
+  gap: var(--space-md);
+  align-items: baseline;
+  padding: var(--space-md);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  list-style: none;
+  color: var(--ink);
+}
+.chapter summary::-webkit-details-marker { display: none; }
+.chapter summary::before {
+  content: '+';
+  font-family: var(--font-mono);
+  color: var(--secondary);
+  font-weight: 400;
+}
+.chapter[open] summary::before { content: '−'; }
+.chapter summary .num {
+  font-family: var(--font-mono);
+  color: var(--tertiary);
+  min-width: 3rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+.chapter[open] summary { border-bottom: 1px solid var(--border); }
+.chapter__body { padding: var(--space-md) var(--space-lg); }
+
+/* ---------- Conteúdo Markdown ---------- */
+.markdown { font-size: 0.95rem; }
+.markdown h1 { font-size: 1.35rem; margin-top: 0; }
+.markdown h2 { font-size: 1.12rem; margin-top: 1.5em; }
+.markdown h3 { font-size: 1rem; }
+.markdown p { margin: 0 0 1em; }
+.markdown ul,
+.markdown ol { margin: 0 0 1em; padding-left: 1.4em; }
+.markdown li { margin-bottom: 0.3em; }
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.85rem;
+}
+.markdown th,
+.markdown td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
+.markdown th { background: var(--secondary-soft); font-family: var(--font-display); font-size: 0.8rem; }
+.markdown blockquote {
+  border-left: 3px solid var(--secondary);
+  background: var(--secondary-soft);
+  margin: 1em 0;
+  padding: 0.6em 1em;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+.markdown blockquote p { margin: 0; }
+.markdown a { color: var(--secondary); word-break: break-word; }
+.markdown code {
+  font-family: var(--font-mono);
+  background: var(--neutral);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+}

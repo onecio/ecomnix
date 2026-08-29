@@ -35,6 +35,15 @@ export const EMISSOES_SETOR: Serie[] = [
   { label: 'Processos industriais', value: 4, unidade: '%', ano: 2024 },
 ];
 
+/** Emissões LÍQUIDAS por setor (2024, SEEG 13ª ed.) — a virada: agropecuária lidera. */
+export const EMISSOES_SETOR_LIQUIDO: Serie[] = [
+  { label: 'Agropecuária', value: 42, unidade: '%', ano: 2024 },
+  { label: 'Energia', value: 29, unidade: '%', ano: 2024 },
+  { label: 'Mudança de uso da terra', value: 17, unidade: '%', ano: 2024 },
+  { label: 'Processos industriais', value: 6, unidade: '%', ano: 2024 },
+  { label: 'Resíduos', value: 6, unidade: '%', ano: 2024 },
+];
+
 /** Desmatamento da Amazônia Legal (PRODES/INPE, km²/ano). */
 export const DESMATAMENTO: Serie[] = [
   { label: '2019', value: 10129, unidade: 'km²', ano: 2019 },
@@ -80,7 +89,7 @@ export const FONTES_DIAGNOSTICO: Fonte[] = [
   },
   {
     instituicao: 'Observatório do Clima / SEEG',
-    titulo: 'SEEG — Sistema de Estimativas de Emissões e Remoções de GEE (13ª edição)',
+    titulo: 'SEEG 2024 (13ª edição) — Sistema de Estimativas de Emissões e Remoções de GEE',
     ano: 2024,
     url: 'https://seeg.eco.br/',
   },
@@ -92,8 +101,8 @@ export const FONTES_DIAGNOSTICO: Fonte[] = [
   },
   {
     instituicao: 'Verra',
-    titulo: 'Verified Carbon Standard (VCS) Program — emissões/acumulado de VCUs',
+    titulo: 'Verra Annual Report 2025 — VCUs acumulados (1,3 bi) e emissões/aposentadoria em 2025',
     ano: 2025,
-    url: 'https://verra.org/programs/verified-carbon-standard/',
+    url: 'https://verra.org/wp-content/uploads/2026/07/Verra-AR_Final_.pdf',
   },
 ];

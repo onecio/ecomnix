@@ -1,32 +1,33 @@
 import SectionHead from '../../components/SectionHead';
+import Markdown from '../../components/Markdown';
 import { EIXOS } from '../../data/biblioteca';
+import { capituloPorNumero } from '../../content/capitulos';
 
 export default function Biblioteca() {
   return (
     <section className="section page-top">
-      <div className="wrap">
+      <div className="wrap wrap--narrow">
         <SectionHead
           kicker="Módulo 02 · Biblioteca"
           title="Biblioteca de iniciativas"
-          lede="Cinco eixos de atuação (Parte III do livro), da prevenção de queimadas à cidade regenerativa."
+          lede="Cinco eixos de atuação (Parte III do livro), com o capítulo correspondente na íntegra."
         />
 
-        <div className="module-nav">
-          {EIXOS.map((e) => (
-            <div className="card" key={e.slug}>
-              <span className="num" style={{ fontFamily: 'var(--font-mono)', color: 'var(--tertiary)', fontSize: '0.8rem' }}>
-                Cap. {e.capitulo}
-              </span>
-              <h3 style={{ marginTop: 4 }}>{e.titulo}</h3>
-              <p style={{ margin: 0, color: 'var(--ink-soft)', fontSize: '0.9rem' }}>{e.descricao}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="callout" style={{ marginTop: 24 }}>
-          <strong>Status:</strong> as fichas detalhadas de cada iniciativa serão preenchidas em
-          paralelo à redação dos capítulos (conteúdo em elaboração pelo pesquisador).
-        </div>
+        {EIXOS.map((e) => {
+          const cap = capituloPorNumero(e.capitulo);
+          return (
+            <details key={e.slug} className="chapter">
+              <summary>
+                <span className="num">Cap. {e.capitulo}</span>
+                <span>{e.titulo}</span>
+              </summary>
+              <div className="chapter__body">
+                <p style={{ color: 'var(--ink-soft)', fontStyle: 'italic' }}>{e.descricao}</p>
+                {cap ? <Markdown content={cap.conteudo} /> : <p>Capítulo ainda não disponível.</p>}
+              </div>
+            </details>
+          );
+        })}
       </div>
     </section>
   );

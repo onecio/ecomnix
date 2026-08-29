@@ -17,6 +17,7 @@ import NatureTag from '../../components/NatureTag';
 import {
   CONCENTRACAO_PADRAO,
   EMISSOES_SETOR,
+  EMISSOES_SETOR_LIQUIDO,
   DESMATAMENTO,
   INDICADORES,
   FONTES_DIAGNOSTICO,
@@ -78,9 +79,9 @@ export default function Diagnostico() {
           </div>
 
           <div className="card">
-            <h3>Emissões do Brasil por setor (2024)</h3>
+            <h3>Emissões do Brasil por setor — SEEG 2024 (13ª ed.)</h3>
             <p style={{ fontSize: '0.85rem', color: 'var(--ink-soft)' }}>
-              Total bruto: 2,145 Gt CO₂e (SEEG). Mudança de uso da terra lidera.
+              Total bruto: 2,145 Gt CO₂e. Nas emissões brutas, a mudança de uso da terra lidera (42%).
             </p>
             <ResponsiveContainer width="100%" height={260}>
               <BarChart data={EMISSOES_SETOR} margin={{ left: 8 }}>
@@ -91,6 +92,14 @@ export default function Diagnostico() {
               </BarChart>
             </ResponsiveContainer>
           </div>
+        </div>
+
+        <div className="callout callout--warn" style={{ marginTop: 16 }}>
+          <strong>A virada de 2024.</strong> Nas emissões <em>líquidas</em> (descontadas as
+          remoções), a agropecuária passou a liderar ({EMISSOES_SETOR_LIQUIDO[0].value}%),
+          superando a mudança de uso da terra ({EMISSOES_SETOR_LIQUIDO[2].value}%). É a primeira
+          vez na série SEEG — e reforça que o eixo agropecuária/uso do solo é central para a
+          democratização do crédito de carbono.
         </div>
 
         <div className="grid grid--2" style={{ marginTop: 16 }}>

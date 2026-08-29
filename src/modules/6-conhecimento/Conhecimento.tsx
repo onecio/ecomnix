@@ -1,28 +1,32 @@
 import SectionHead from '../../components/SectionHead';
-import { CAPITULOS } from '../../data/capitulos';
+import Markdown from '../../components/Markdown';
+import { CAPITULOS_COMPLETOS } from '../../content/capitulos';
 
 export default function Conhecimento() {
-  const partes = Array.from(new Set(CAPITULOS.map((c) => c.parte)));
+  const partes = Array.from(new Set(CAPITULOS_COMPLETOS.map((c) => c.parte)));
   return (
     <section className="section page-top">
       <div className="wrap wrap--narrow">
         <SectionHead
           kicker="Módulo 06 · Conhecimento"
           title="Base de conhecimento"
-          lede="Os 21 capítulos do livro ECOMNIX, organizados em quatro partes e fechamento. Conteúdo em redação pelo pesquisador."
+          lede="Os 21 capítulos do livro ECOMNIX, na íntegra. Clique em um capítulo para ler."
         />
 
         {partes.map((parte) => (
           <div key={parte}>
             <h3 className="chapter-part">{parte}</h3>
-            <ol className="chapter-list">
-              {CAPITULOS.filter((c) => c.parte === parte).map((c) => (
-                <li key={c.numero}>
+            {CAPITULOS_COMPLETOS.filter((c) => c.parte === parte).map((c) => (
+              <details key={c.numero} className="chapter">
+                <summary>
                   <span className="num">{String(c.numero).padStart(2, '0')}</span>
                   <span>{c.titulo}</span>
-                </li>
-              ))}
-            </ol>
+                </summary>
+                <div className="chapter__body">
+                  <Markdown content={c.conteudo} />
+                </div>
+              </details>
+            ))}
           </div>
         ))}
       </div>
