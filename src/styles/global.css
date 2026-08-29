@@ -561,3 +561,21 @@ select {
   border-radius: var(--radius-sm);
   font-size: 0.85em;
 }
+
+/* ---------- Ilustrações ---------- */
+.ilustracao {
+  margin: var(--space-md) 0;
+}
+.ilustracao img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.ilustracao figcaption {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  margin-top: var(--space-xs);
+}
+.ilustracao figcaption a { color: var(--secondary); }

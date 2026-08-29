@@ -53,9 +53,10 @@ Mapeamento do v1 → v2 (reuso, não re-hospedagem):
 - Nenhum dado pessoal sensível é coletado, transmitido ou armazenado. Zero backend.
 - Aviso educacional embutido: "crédito simulado ≠ crédito certificado; redução estimada ≠
   medição".
-- **LGPD (SEC-001):** como não há tratamento de dado pessoal identificável, não existe
-  obrigação de consentimento — o aviso transparente é suficiente. Não criar checkbox
-  artificial de consentimento.
+- **LGPD (ECOMNIX-SEC-001):** sem tratamento de dado pessoal identificável; processamento
+  100% local e efêmero; aviso transparente no lugar de consentimento (não usar
+  "consentimento" como base legal — não há coleta/tratamento de dado pessoal). Não criar
+  checkbox de opt-in.
 
 ## 4. Modelo de conteúdo (capítulos do livro)
 

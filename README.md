@@ -51,3 +51,12 @@ GitHub Actions registrada como melhoria futura.
 
 Todos os números factuais do Diagnóstico são citados com fonte verificada (ver
 `src/data/painel.ts`). Não altere valores sem revalidar a fonte primária.
+
+## Créditos e licença
+
+- **Código da plataforma:** MIT (ver `LICENSE`).
+- **Conteúdo do livro (21 capítulos):** proposto CC BY 4.0 (atribuição) — confirmar com o autor.
+- **Ilustrações (21):** geradas via ComfyUI (agente Estúdio). A licença final depende do
+  **checkpoint/modelo** de cada geração, registrado no `manifest.json` do pacote de imagens
+  (checkpoint atual: DreamShaper_8_pruned.safetensors) — verificar antes de redistribuir.
+- Fontes e créditos completos: ver `CREDITOS_E_FONTES.md`.
