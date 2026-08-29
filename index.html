@@ -1,153 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECOMNIX | Em Manutenção</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&display=swap');
-
-        :root {
-            --dark-indigo: #0D1B2A;
-            --glow-cyan: #00FFFF; /* Cor do botão original: Descubra a Simbiose */
-            --text-light: #F0F2F5;
-            --text-white: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Sora', sans-serif;
-            background-color: var(--dark-indigo);
-            color: var(--text-light);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100vh;
-            overflow: hidden; 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* NOVO: Imagem de Fundo Positiva e Temática */
-        .maintenance-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Troque esta URL pelo caminho da sua imagem real (e.g., uma foto de floresta exuberante, regeneração, ou um drone sobrevoando uma área de reflorestamento) */
-            background-image: url('placeholder-floresta-regeneracao-carbono.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2; /* Aumentei um pouco a opacidade para maior impacto visual */
-            filter: grayscale(10%) brightness(80%); /* Adicionando um leve filtro para destacar o texto */
-            z-index: -1;
-        }
-
-        .content-wrapper {
-            position: relative;
-            z-index: 10;
-            padding: 0 10%;
-            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8); /* Ajuda o texto a se destacar do fundo */
-        }
-
-        /* Estilo para Centralizar o Logo */
-        .logo-center {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--text-white);
-            text-decoration: none;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .logo-center span {
-            color: var(--glow-cyan);
-            text-shadow: 0 0 15px var(--glow-cyan);
-        }
-
-        /* Estilos do Conteúdo Principal */
-        .hero-title {
-            font-size: 4rem; /* Reduzido levemente para ajudar a caber em uma linha */
-            font-weight: 800;
-            color: var(--text-white);
-            line-height: 1.05;
-            margin-bottom: 30px;
-            text-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
-            max-width: 900px;
-            letter-spacing: -1px;
-            /* NOVO: Força o texto a não quebrar */
-            white-space: nowrap; 
-        }
-
-        .hero-description {
-            font-size: 1.4rem;
-            max-width: 750px;
-            margin: 0 auto 70px auto;
-            line-height: 1.7;
-            font-weight: 400;
-        }
-
-        /* Estilo da Mensagem de Manutenção */
-        .maintenance-message {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-top: 50px;
-            color: var(--glow-cyan); 
-            text-shadow: 0 0 15px var(--glow-cyan);
-        }
-
-        /* Responsividade */
-        @media (max-width: 1024px) {
-            .hero-title {
-                /* Remove a restrição 'nowrap' em telas menores para evitar overflow e rolagem horizontal desnecessária */
-                white-space: normal;
-                font-size: 3.5rem; 
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .logo-center {
-                font-size: 2.2rem;
-                margin-bottom: 30px;
-            }
-            .hero-title {
-                font-size: 2.8rem;
-                white-space: normal; /* Mantém a quebra de linha em mobile */
-            }
-            .hero-description {
-                font-size: 1rem;
-                margin-bottom: 50px;
-            }
-            .maintenance-message {
-                font-size: 1.6rem;
-            }
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="maintenance-background" style="background-image: url('https://picsum.photos/1920/1080?random=1&nature,forest,sustainability,carbon,regenerative');">
-    </div>
-
-    <div class="content-wrapper">
-        <div class="logo-center">ECOM<span>NIX</span></div>
-
-        <h1 class="hero-title">A Natureza Entra na Rede.</h1>
-        <p class="hero-description">ECOMNIX é o ecossistema de inteligência regenerativa que traduz o valor da Terra em ativos digitais, conectando a economia climática ao futuro da preservação.</p>
-        
-        <p class="maintenance-message">SITE EM MANUTENÇÃO, AGUARDE... NOVIDADES EM BREVE</p>
-    </div>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ECOMNIX — plataforma de referência nacional em democratização do crédito de carbono."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>ECOMNIX — Democratização do crédito de carbono</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
