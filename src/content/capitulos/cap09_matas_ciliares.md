@@ -44,7 +44,7 @@ periurbanas (lacuna documentada).
 
 ## Fontes citadas
 
-1. Lei nº 12.651/2012 (Código Florestal), art. 4º. http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm
+1. Lei nº 12.651/2012 (Código Florestal), art. 4º. https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm
 2. ANA — Conjuntura dos Recursos Hídricos no Brasil 2023 (dados 2022). https://www.snirh.gov.br/portal/centrais-de-conteudos/conjuntura-dos-recursos-hidricos/conjunturainforme2023.pdf
 3. MapBiomas Alerta — RAD2024 (15/05/2025) — 0,8% dos imóveis concentraram 81,4% dos alertas.
 4. Guidotti et al. (2017), Sustentabilidade em Debate 5(1) — anistia de ~4,5 Mha de APPs. https://www.researchgate.net/publication/317278692_NUMEROS_DETALHADOS_DO_NOVO_CODIGO_FLORESTAL_E_SUAS_IMPLICACOES_PARA_OS_PRAs_PRINCIPAIS_RESULTADOS_E_CONSIDERACOES

@@ -59,4 +59,4 @@ fora do mercado de carbono, repetindo o padrão de exclusão diagnosticado na Pa
 4. Banco do Nordeste — Revista Econômica do Nordeste (CEASA Curitiba, 31 t/dia).
 5. Insper Agro in Data / IPEA — resíduos agroindustriais (~291 Mt/ano).
 6. Sistema OCB — Panorama Energia Cooperativa (582 geradoras/2022).
-7. Lei nº 12.305/2010 (Política Nacional de Resíduos Sólidos). http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm
+7. Lei nº 12.305/2010 (Política Nacional de Resíduos Sólidos). https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm
