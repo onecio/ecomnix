@@ -772,7 +772,7 @@ periurbanas (lacuna documentada).
 
 ## Fontes citadas
 
-1. Lei nº 12.651/2012 (Código Florestal), art. 4º. http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm
+1. Lei nº 12.651/2012 (Código Florestal), art. 4º. https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12651.htm
 2. ANA — Conjuntura dos Recursos Hídricos no Brasil 2023 (dados 2022). https://www.snirh.gov.br/portal/centrais-de-conteudos/conjuntura-dos-recursos-hidricos/conjunturainforme2023.pdf
 3. MapBiomas Alerta — RAD2024 (15/05/2025) — 0,8% dos imóveis concentraram 81,4% dos alertas.
 4. Guidotti et al. (2017), Sustentabilidade em Debate 5(1) — anistia de ~4,5 Mha de APPs. https://www.researchgate.net/publication/317278692_NUMEROS_DETALHADOS_DO_NOVO_CODIGO_FLORESTAL_E_SUAS_IMPLICACOES_PARA_OS_PRAs_PRINCIPAIS_RESULTADOS_E_CONSIDERACOES
@@ -1002,7 +1002,7 @@ fora do mercado de carbono, repetindo o padrão de exclusão diagnosticado na Pa
 4. Banco do Nordeste — Revista Econômica do Nordeste (CEASA Curitiba, 31 t/dia).
 5. Insper Agro in Data / IPEA — resíduos agroindustriais (~291 Mt/ano).
 6. Sistema OCB — Panorama Energia Cooperativa (582 geradoras/2022).
-7. Lei nº 12.305/2010 (Política Nacional de Resíduos Sólidos). http://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm
+7. Lei nº 12.305/2010 (Política Nacional de Resíduos Sólidos). https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12305.htm
 `,Im=`# Capítulo 14 — Cidades responsivas: aterros, arborização e rios urbanos
 
 > **Registro:** rascunho v1.0. Fontes verificadas em 29/08/2026 (dossiê
