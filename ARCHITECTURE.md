@@ -53,13 +53,16 @@ Mapeamento do v1 → v2 (reuso, não re-hospedagem):
 - Nenhum dado pessoal sensível é coletado, transmitido ou armazenado. Zero backend.
 - Aviso educacional embutido: "crédito simulado ≠ crédito certificado; redução estimada ≠
   medição".
+- **LGPD (SEC-001):** como não há tratamento de dado pessoal identificável, não existe
+  obrigação de consentimento — o aviso transparente é suficiente. Não criar checkbox
+  artificial de consentimento.
 
 ## 4. Modelo de conteúdo (capítulos do livro)
 
-- Capítulos em Markdown (arquivos `.md` em `src/modules/6-conhecimento/capitulos/`).
-- Renderização **segura**: `react-markdown` sem HTML bruto (sem `dangerouslySetInnerHTML`,
-  sem `innerHTML`) — mantém a garantia de 0 XSS do SECURITY-REPORT v1.
-- Frontmatter por capítulo: `slug`, `titulo`, `ordem`, `resumo`, `fontes[]`.
+- Capítulos em Markdown (arquivos `.md` em `src/content/capitulos/`, importados via `?raw`).
+- Renderização **segura (SEC-002)**: `react-markdown` **sem `rehype-raw`** (sem HTML bruto,
+  sem `dangerouslySetInnerHTML`/`innerHTML`), dados renderizados apenas como text nodes React,
+  e **allowlist https** via `urlTransform` (URLs não-https viram texto plano, sem link).
 - A biblioteca (módulo 2) usa o mesmo padrão: fichas de iniciativa em Markdown/TS tipado.
 
 ## 5. Design tokens
@@ -86,3 +89,9 @@ Alvo **WCAG 2.2 AA** (supera o requisito WCAG 2.1 AA): skip-link, landmarks, `:f
 2. **Identidade/brand**: confirmar nome, paleta e tom do DESIGN.md.
 3. **Estrutura dos capítulos**: títulos/ordem para montar o índice da base de conhecimento.
 4. **Dados do diagnóstico**: quais datasets/órgãos usar no painel (SBCE, SEEG, PRODES, B3…).
+
+## 9. Melhorias futuras
+
+- **SEC-003 (baixa prioridade, não bloqueia):** migrar `recharts` 2.x → 3.x.
+- Migrar deploy para GitHub Actions (`deploy.yml` pronto localmente; aguarda escopo
+  `workflow` no token — hoje usa branch `gh-pages`).

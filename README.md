@@ -20,7 +20,9 @@ Design system em CSS custom properties (tokens no `DESIGN.md`). Zero backend.
 ## Privacidade
 
 Calculadora e simulador processam **100% no cliente** e **não persistem dados**. Nenhum dado
-pessoal é coletado, transmitido ou armazenado.
+pessoal é coletado, transmitido ou armazenado. Como não há tratamento de dado pessoal
+identificável, não há obrigação de consentimento LGPD — o aviso transparente é suficiente
+(sem checkbox artificial).
 
 ## Desenvolvimento
 
@@ -33,14 +35,16 @@ npm run build     # tsc --noEmit + vite build → dist/
 
 ## Publicação
 
-GitHub Pages via Actions (`.github/workflows/deploy.yml`). Domínio: `ecomnix.com.br`.
-`base: './'` + HashRouter → funciona no domínio customizado e no subpath
-`onecio.github.io/ecomnix/`.
+GitHub Pages (branch `gh-pages`). Domínio: `ecomnix.com.br`. `base: './'` + HashRouter →
+funciona no domínio customizado e no subpath `onecio.github.io/ecomnix/`. Migração para
+GitHub Actions registrada como melhoria futura.
 
 ## Documentação
 
 - `ARCHITECTURE.md` — decisões de arquitetura e mapeamento da refatoração.
 - `DESIGN.md` — tokens de design (fonte única de verdade).
+- `CREDITOS_E_FONTES.md` — créditos, licença e fontes de dados.
+- `LICENSE` — código da plataforma (MIT).
 - `docs/ECOMNIX_White_Paper.pdf` — white paper (conteúdo-fonte).
 
 ## Integridade dos dados
